@@ -19,7 +19,7 @@ include_once 'template/topbar.php';
                             <h1 class="h4 text-gray-900 mb-4">Bikin Akun Yok!</h1>
                         </div>
 
-                        <form action="routers/r_login.php?aksi=register" method="POST" class="user">
+                        <form action="../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype = "multipart/form-data">
 
                             <!--untuk menampung inputan id user -->
                             <div class="form-group">
@@ -33,14 +33,14 @@ include_once 'template/topbar.php';
                             </div>
                             <!--untuk menampung email dari user-->
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Quantity" name="email">
+                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Quantity" name="qty">
                             </div>
 
                             <!--untuk menampung password dari user-->
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-user" id="password"
-                                    placeholder="Harga" name="password">
+                                <input type="text" class="form-control form-control-user" id="password"
+                                    placeholder="Harga" name="harga">
                             </div>
 
                             <!--untuk menampung nama dari user-->
@@ -49,6 +49,10 @@ include_once 'template/topbar.php';
                                     value="user" name="role" hidden>
                             </div>
                            
+                            <div class="input-field">
+                                <input type="file" value="Choose file" id="register" name="register">
+                            </div>
+
                             <div class="input-field">
                                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Tambahkan" id="register" name="register">
                             </div>

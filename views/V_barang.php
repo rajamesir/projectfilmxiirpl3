@@ -8,7 +8,9 @@ include_once 'template/topbar.php';
 include_once '../controllers/C_barang.php';
 $barang = new C_barang();
 ?>              
-            <div class = "rows-
+            <div class = "row">
+                <div class = "col-lg-2"></div>
+                <div class = "col-lg-8">
                 <a href="tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                         <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
                                     </a>          
@@ -39,7 +41,7 @@ $barang = new C_barang();
                                         foreach ($barang->tampil() as $b){
 
                                         ?>
-
+        
                                         <tr>
                                             <td><?php echo $nomor++?></td>
                                             <td><?= $b->nama_barang?></td>
@@ -47,15 +49,9 @@ $barang = new C_barang();
                                             <td><?= $b->harga?></td>
                                             <td><?= $b->photo?></td>
                                             <td align = 'center'><a href="#" class="btn btn-primary btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-flag"></i>
-                                        </span>
                                         <span class="text">Edit</span>
                                     </a>
                                     <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>
