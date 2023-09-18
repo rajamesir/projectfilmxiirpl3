@@ -29,13 +29,13 @@ class C_barang{
         if ($query) {
             echo "Data berhasil ditambahkan ke tabel";
         }else{
-            echo "Data gagal anjir";
+            echo "Data gagal ditambahkan";
         }
     }
     public function edit($id) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM barang WHERE id= '$id'";
+        $sql ="SELECT * FROM barang WHERE id = '$id'";
         $query = mysqli_query($conn->conn(), $sql);
 
         while ($q = mysqli_fetch_object($query)) {
