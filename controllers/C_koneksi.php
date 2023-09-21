@@ -1,7 +1,7 @@
 <?php
 // -ini adalah kelas, nama kelas harus sama persis dengan nama file
 
-use C_koneksi as GlobalC_koneksi;
+// use C_koneksi as GlobalC_koneksi;
 
 class C_koneksi {
 
@@ -27,8 +27,8 @@ public function conn() {
 }
 }
 //inisialisasi objek. objek harus diluar class
-$koneksi = new C_koneksi();
+// $koneksi = new C_koneksi();
 //memanggil method yang ada didalam class
-$koneksi->conn();
+// $koneksi->conn();
 
 ?>

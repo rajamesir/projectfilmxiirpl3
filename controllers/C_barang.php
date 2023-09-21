@@ -20,32 +20,41 @@ class C_barang{
     }
 
     public function tambah($id,$nama,$qty,$harga,$photo) {
-        $sql = "INSERT INTO barang VALUES
-        ('$id','$nama','$qty','$harga','$photo')";
 
         $conn = new C_koneksi();
 
+        $sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$harga','$photo')";
+
         $query = mysqli_query($conn->conn(), $sql);
+
+        // $sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$harga','$photo')";
+        // var_dump($sql);
+
+        // $query = mysqli_query($conn->conn(), $sql);
+        // var_dump($query);
+
         if ($query) {
-            echo "Data berhasil ditambahkan ke tabel";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
         }else{
-            echo "Data gagal ditambahkan";
+            echo "<script>alert('Data gagal ditambahkan');window.location='../views/V_tambah_barang.php'</script>";
         }
     }
     public function edit($id) {
         $conn = new C_koneksi();
 
         $sql ="SELECT * FROM barang WHERE id = '$id'";
+
         $query = mysqli_query($conn->conn(), $sql);
 
         while ($q = mysqli_fetch_object($query)) {
-            
+
             $hasil[] = $q;
         }
 
         return $hasil;
     }
-    public function update ($id, $data) {
+
+    public function update ($id, $nama, $qty, $harga, $photo) {
 
         $conn = new C_koneksi();
 
@@ -62,7 +71,14 @@ class C_barang{
         }
     }
     public function delete(){
+        $conn = new C_koneksi();
+        
         $sql = "DELETE FROM Barang WHERE id = '$id'";
+
+        mysqli_query($conn->conn(), $sql);
+
+        header("Location:../views/V_barang.php");
+
     }
 
 }

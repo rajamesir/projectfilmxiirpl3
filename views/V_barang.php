@@ -11,7 +11,7 @@ $barang = new C_barang();
             <div class = "row">
                 <div class = "col-lg-2"></div>
                 <div class = "col-lg-8">
-                <a href="tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                <a href="V_tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                         <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
                                     </a>          
                 <!-- /.container-fluid -->
@@ -48,10 +48,11 @@ $barang = new C_barang();
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
                                             <td><?= $b->photo?></td>
-                                            <td align = 'center'><a href="#" class="btn btn-primary btn-icon-split">
+                                            <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
+                                            <td align = 'center'><a href="V_edit_barang.php?id=<?= $b->id ?>" class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
+                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_barang.php?id=<?= $b->id ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>
@@ -73,7 +74,7 @@ $barang = new C_barang();
                                 </table>
                             </div>
                         </div>
-
+                                            
 <?php
     include_once 'template/footer.php';
 ?>

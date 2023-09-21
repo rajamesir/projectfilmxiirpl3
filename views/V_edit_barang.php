@@ -4,6 +4,10 @@
 include_once 'template/header.php';
 include_once 'template/sidebar.php';
 include_once 'template/topbar.php';
+
+include_once '../controllers/C_barang.php';
+
+$barang = new C_barang();
 ?>
 <body class="bg-gradient-primary">
 
@@ -19,33 +23,33 @@ include_once 'template/topbar.php';
                             <h1 class="h4 text-gray-900 mb-4">Edit Barang</h1>
                         </div>
 
-                        <form action="../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype = "multipart/form-data">
-
+                        <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype = "multipart/form-data">
+                            <?php foreach($barang->edit($_GET['id']) as $b){}?>
                             <!--untuk menampung inputan id user -->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="id" hidden>
+                                    placeholder="Id" name="id" value ="<?= $b->id ?>" hidden>
                             </div>
                             <!--untuk menampung nama dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Nama Barang" name="nama">
+                                    placeholder="Nama Barang" name="nama" value ="<?= $b->nama_barang ?>">
                             </div>
                             <!--untuk menampung email dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Quantity" name="qty">
+                                    placeholder="Quantity" name="qty" value ="<?= $b->qty ?>">
                             </div>
 
                             <!--untuk menampung password dari user-->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user" id="password"
-                                    placeholder="Harga" name="harga">
+                                    placeholder="Harga" name="harga"value ="<?= $b->harga ?>">
                             </div>
 
                             <!--untuk menampung nama dari user-->
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="role"
+                                <input type="file" class="form-control form-control-user" id="photo"
                                     value="user" name="role" hidden>
                             </div>
                            
