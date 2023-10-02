@@ -50,11 +50,11 @@ $barang = new C_barang();
                             <!--untuk menampung nama dari user-->
                             <div class="form-group">
                                 <input type="file" class="form-control form-control-user" id="photo"
-                                    value="user" name="role" hidden>
+                                    value="user" name="photo" hidden>
                             </div>
                            
                             <div class="input-field">
-                                <input type="file" value="Choose file" id="register" name="register">
+                                <input type="file" value="Choose file" id="photo" name="photo">
                             </div>
 
                             <div class="input-field">

@@ -7,7 +7,7 @@ class C_barang{
 
        $conn = new C_koneksi();
 
-        $sql = "SELECT * FROM barang ORDER BY id DESC";
+        $sql = "SELECT * FROM barang_contoh ORDER BY id DESC";
 
         $query = mysqli_query($conn->conn(),$sql);
 
@@ -19,30 +19,51 @@ class C_barang{
         return $hasil;
     }
 
-    public function tambah($id,$nama,$qty,$harga,$photo) {
+    public function tambah_barang($id, $nama, $qty, $harga, $nama_photo){
 
         $conn = new C_koneksi();
 
-        $sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$harga','$photo')";
-
-        $query = mysqli_query($conn->conn(), $sql);
-
-        // $sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$harga','$photo')";
+        // $sql = " INSERT INTO barang VALUES ($id, '$nama', '$qty', '$harga', '$nama_photo')";
         // var_dump($sql);
-
-        // $query = mysqli_query($conn->conn(), $sql);
-        // var_dump($query);
+        $query = mysqli_query($conn->conn(), "INSERT INTO barang_contoh VALUES ($id, '$nama', $qty, $harga, '$nama_photo')");
+        
 
         if ($query) {
             echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
-        }else{
-            echo "<script>alert('Data gagal ditambahkan');window.location='../views/V_tambah_barang.php'</script>";
+            
+        }else {
+            echo "Selalu Gagal ";
+            
         }
+
     }
+
+    // public function tambah($id=0,$nama,$qty,$harga,$nama_photo) {
+
+    //     $conn = new C_koneksi();
+
+    //     $sql = "INSERT INTO barang VALUES ($id,'$nama','$qty','$harga','$nama_photo')";
+    //     var_dump($sql);
+
+    //    $query = mysqli_query($conn->conn(),$sql);
+
+    //      //$sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$harga','$photo')";
+    //      //var_dump($sql);
+
+    //     // $query = mysqli_query($conn->conn(), $sql);
+    //     var_dump($query);
+
+    //     if ($query) {
+    //         echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+    //     }else{
+    //         echo "Selalu Gagal ";
+    //     }
+    // }
+
     public function edit($id) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM barang WHERE id = '$id'";
+        $sql ="SELECT * FROM barang_contoh WHERE id = '$id'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
@@ -54,28 +75,28 @@ class C_barang{
         return $hasil;
     }
 
-    public function update ($id, $nama, $qty, $harga, $photo) {
+    public function update ($id, $nama, $qty, $harga, $nama_photo) {
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE barang SET nama_barang = '$nama', qty = '$qty', harga = '$harga', photo = '$photo' WHERE id = '$id'";
+        $sql = "UPDATE barang_contoh SET nama_barang = '$nama', qty = $qty, harga = $harga, photo = '$nama_photo' WHERE id = $id";
 
         $query = mysqli_query($conn->conn(), $sql);
 
 
         if ($query) {
-            echo "<script>alert('Data berhasil diubah');window.location='../views/V_barang.php'</script>";
+            echo "data berhasil";
 
         }else {
             echo "Dataa gagal diubah";
         }
     }
-    public function delete(){
+    public function delete($id){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM Barang WHERE id = '$id'";
+        $sql = "DELETE FROM barang_contoh WHERE id = '$id'";
 
-        mysqli_query($conn->conn(), $sql);
+        $query = mysqli_query($conn->conn(), $sql);
 
         header("Location:../views/V_barang.php");
 

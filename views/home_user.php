@@ -14,9 +14,6 @@ include_once 'template/topbar.php';
                     $_SESSION['data'] ['role']?>
                     </h1>
                 </div>
-                <form action ="routers/r_login.php?aksi=login" method="POST" class="user">
-                    <a href="../index.php">logout :D</a>
-</form>
                 <!-- /.container-fluid -->
 <?php
     include_once 'template/footer.php';

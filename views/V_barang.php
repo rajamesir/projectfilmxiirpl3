@@ -47,9 +47,12 @@ $barang = new C_barang();
                                             <td><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
-                                            <td><?= $b->photo?></td>
+                                            <td>
+                                            <div style="display: flex ; justify-content: center; align-items: center;">
+                                                <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="50" height="65">
+                                        </div></td>
                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
-                                            <td align = 'center'><a href="V_edit_barang.php?id=<?= $b->id ?>" class="btn btn-primary btn-icon-split">
+                                            <td align = 'center'><a href="V_edit_barang.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>
                                     <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_barang.php?id=<?= $b->id ?>&aksi=hapus" class="btn btn-danger btn-icon-split">

@@ -29,7 +29,7 @@ include_once 'template/topbar.php';
                         <!--untuk menampung inputan id user -->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="id" hidden>
+                                    placeholder="Id" name="id" name="id" hidden>
                             </div>
                             <!--untuk menampung nama dari user-->
                             <div class="form-group">
@@ -38,28 +38,28 @@ include_once 'template/topbar.php';
                             </div>
                             <!--untuk menampung email dari user-->
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
+                                <input type="text" class="form-control form-control-user" id="qty"
                                     placeholder="Quantity" name="qty">
                             </div>
 
                             <!--untuk menampung password dari user-->
                             <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="password"
+                                <input type="text" class="form-control form-control-user" id="harga"
                                     placeholder="Harga" name="harga">
                             </div>
 
                             <!--untuk menampung nama dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="role"
-                                    value="user" name="role" hidden>
-                            </div>
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="photo"
+                                    placeholder="photo" name="role" hidden>
+                            </div> -->
                            
                             <div class="input-field">
-                                <input type="file" value="Choose file" id="register" name="register">
+                                <input type="file" value="Choose file" id="photo" name="photo">
                             </div>
 
                             <div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Tambahkan" id="" name="Tambahkan">
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Tambahkan" id="" name="tambah">
                             </div>
 
                         </form>
