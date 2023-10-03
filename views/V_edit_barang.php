@@ -23,8 +23,8 @@ $barang = new C_barang();
                             <h1 class="h4 text-gray-900 mb-4">Edit Barang</h1>
                         </div>
 
-                        <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype = "multipart/form-data">
-                            <?php foreach($barang->edit($_GET['id']) as $b){}?>
+                        <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
+                            <?php foreach($barang->edit($_GET['id']) as $b){?>
                             <!--untuk menampung inputan id user -->
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user"
@@ -50,16 +50,20 @@ $barang = new C_barang();
                             <!--untuk menampung nama dari user-->
                             <div class="form-group">
                                 <input type="file" class="form-control form-control-user" id="photo"
-                                    value="user" name="photo" hidden>
+                                    value="<?= $b->nama_photo ?>" name="photo" hidden>
                             </div>
                            
                             <div class="input-field">
-                                <input type="file" value="Choose file" id="photo" name="photo">
+                                <input type="file" value="Choose File" id="photo" name="photo">
                             </div>
 
                             <div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Tambahkan" id="register" name="register">
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="register" name="register">
                             </div>
+
+                            <?php 
+                            }
+                            ?>
 
                         </form>
                         

@@ -82,10 +82,10 @@ class C_barang{
         $sql = "UPDATE barang_contoh SET nama_barang = '$nama', qty = $qty, harga = $harga, photo = '$nama_photo' WHERE id = $id";
 
         $query = mysqli_query($conn->conn(), $sql);
-
+        var_dump($sql);
 
         if ($query) {
-            echo "data berhasil";
+            echo "yes";
 
         }else {
             echo "Dataa gagal diubah";

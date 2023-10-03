@@ -188,10 +188,8 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                <a class"dropdown-item" href="../routers/r_logout.php" value="Logout" id="" name"logout">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-grsy-400"></i>
-                    logout 
-                                <a class="dropdown-item" href="../routers/r_logout.php" value="Logout" name="logout">
+                                <a onclick="return confirm('Apakah anda yakin mau logout dari sini?')" class="dropdown-item" href="../routers/r_login.php?aksi=logout" method="GET" value="Logout" name="logout">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

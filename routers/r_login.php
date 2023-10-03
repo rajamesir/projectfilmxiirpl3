@@ -31,8 +31,4 @@ $login = new C_login();
     } elseif ($_GET['aksi'] == 'logout') {
         $login->logout();
     }
-    elseif  ($_GET['aksi'] == 'logout') {
-        $login->logout;
-    }
-
 ?>
