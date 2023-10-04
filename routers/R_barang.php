@@ -43,7 +43,7 @@ if ($_GET['aksi'] == 'tambah') {
     
 
    
-}elseif ($_GET['aksi'] == 'update'){
+}elseif ($_GET['aksi'] == 'update') {
     $id = $_POST['id'];
     $nama = $_POST['nama'];
     $qty = $_POST['qty'];
@@ -70,7 +70,7 @@ if ($_GET['aksi'] == 'tambah') {
             move_uploaded_file($file_tmp,'../assets/img/'. $nama_photo);
 
             // $query = $barang->tambah($id=0, $nama, $qty, $harga, $nama_photo);
-            $barang->update($id = 0, $nama, $qty, $harga, $nama_photo);
+            $barang->update($id, $nama, $qty, $harga, $nama_photo);
 
         }
         else{

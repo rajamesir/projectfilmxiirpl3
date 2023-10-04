@@ -7,7 +7,7 @@ class C_barang{
 
        $conn = new C_koneksi();
 
-        $sql = "SELECT * FROM barang_contoh ORDER BY id DESC";
+        $sql = "SELECT * FROM produk ORDER BY id DESC";
 
         $query = mysqli_query($conn->conn(),$sql);
 
@@ -25,7 +25,7 @@ class C_barang{
 
         // $sql = " INSERT INTO barang VALUES ($id, '$nama', '$qty', '$harga', '$nama_photo')";
         // var_dump($sql);
-        $query = mysqli_query($conn->conn(), "INSERT INTO barang_contoh VALUES ($id, '$nama', $qty, $harga, '$nama_photo')");
+        $query = mysqli_query($conn->conn(), "INSERT INTO produk VALUES ($id, '$nama', $qty, $harga, '$nama_photo')");
         
 
         if ($query) {
@@ -63,7 +63,7 @@ class C_barang{
     public function edit($id) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM barang_contoh WHERE id = '$id'";
+        $sql ="SELECT * FROM produk WHERE id = '$id'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
@@ -79,13 +79,13 @@ class C_barang{
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE barang_contoh SET nama_barang = '$nama', qty = $qty, harga = $harga, photo = '$nama_photo' WHERE id = $id";
+        $sql = "UPDATE `produk` SET `nama_barang` = '$nama', `qty` = '$qty', `harga` = '$harga', `photo` = '$nama_photo' WHERE `id` = '$id'";
 
         $query = mysqli_query($conn->conn(), $sql);
-        var_dump($sql);
+        
 
         if ($query) {
-            echo "yes";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
 
         }else {
             echo "Dataa gagal diubah";
@@ -94,7 +94,7 @@ class C_barang{
     public function delete($id){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM barang_contoh WHERE id = '$id'";
+        $sql = "DELETE FROM produk WHERE id = '$id'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
