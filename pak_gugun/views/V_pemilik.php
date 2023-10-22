@@ -85,12 +85,12 @@ $pemilik = new C_pemilik();
                                             <td align = "center"><?php echo $nomor++?></td>
                                             <td align = "center"><?= $p->nama_pemilik?></td>
                                             <td align = "center"><?= $p->jk_pemilik?></td>
-                                            <td align = "center"><?= $p->tanggal_lahir?></td>
+                                            <td align = "center"><?= $p->tgl_lahir?></td>
                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
-                                            <td align = 'center'><a href="V_edit_pemilik.php?id=<?= $p->id_inventory ?> "class="btn btn-primary btn-icon-split">
+                                            <td align = 'center'><a href="V_edit_pemilik.php?id=<?= $p->id_pemilik ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>
-                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_pemilik.php?id=<?= $p->id_pemilik ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
+                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href = "../routers/R_pemilik.php?id=<?= $p->id_pemilik ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>

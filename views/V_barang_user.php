@@ -1,4 +1,5 @@
 <?php
+//session_start();
 //modular memanggil file dari folder tampleate
 $halaman = "Barang";
 include_once 'template/header.php';
@@ -6,8 +7,6 @@ include_once 'template/sidebar.php';
 include_once 'template/topbar.php';
 include_once '../controllers/C_barang.php';
 $barang = new C_barang();
-
-
 ?>              
             <div class = "row">
                 <div class = "col-lg-2"></div>
@@ -30,7 +29,6 @@ $barang = new C_barang();
                                             <th>Qty</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
-                                            <th>Action</th>
                                         </tr>
                                     </thead>
 
@@ -44,7 +42,6 @@ $barang = new C_barang();
                                         ?>
         
                                         <tr>
-                                            <-- yang ada di dalam $b itu nama kolom dari tabel di database
                                             <td><?php echo $nomor++?></td>
                                             <td><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
@@ -53,14 +50,6 @@ $barang = new C_barang();
                                             <div style="display: flex ; justify-content: center; align-items: center;">
                                                 <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="50" height="65">
                                         </div></td>
-                                            <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
-                                            <td align = 'center'><a href="V_edit_barang.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
-                                        <span class="text">Edit</span>
-                                    </a>
-                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_barang.php?id=<?= $b->id ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
                                         </tr>
                                     
                                         <?php } ?>
@@ -73,7 +62,6 @@ $barang = new C_barang();
                                             <th>Qty</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
-                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                 </table>

@@ -95,11 +95,11 @@ class C_pemilik{
     public function delete($id_pemilik){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM pemilik_barang WHERE id_pemilik = '$id_pemilik'";
+        $sql = "DELETE FROM pemilik_barang WHERE id_pemilik = $id_pemilik";
 
         $query = mysqli_query($conn->conn(), $sql);
 
-        header("Location:../views/V_pemilik.php");
+        header("Location: ../views/V_pemilik.php");
 
     }
 

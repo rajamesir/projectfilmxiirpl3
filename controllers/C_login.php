@@ -98,7 +98,7 @@ class C_login {
                     
                     //untuk role pengguna bukan sebagai admin dan user
                     }else {
-                        echo "<script>alert('tolong cek username dan password');window.location='../index.php'</script>";
+                        echo "username ngasal maneh mah";
                     }
 
                     

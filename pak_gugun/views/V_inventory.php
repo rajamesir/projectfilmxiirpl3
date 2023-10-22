@@ -100,7 +100,7 @@ $pemilik = new C_pemilik();
 
                                         <tr>
                                             <td colspan = "8">
-                                                <h1>HAHHHH KOSOOONG</h1>
+                                                <h1 align="center">HAHHHH KOSOOONG</h1>
                                             </td>
                                         </tr>
 
@@ -109,6 +109,7 @@ $pemilik = new C_pemilik();
                                         $nomor = 1;
 
                                         foreach ($barang->tampil() as $b){
+
 
                                         ?>
         
@@ -119,7 +120,12 @@ $pemilik = new C_pemilik();
                                             <td align = "center"><?= $b->jenis_barang?></td>
                                             <td align = "center"><?= $b->tanggal_masuk?></td>
                                             <td align = "center"><?= $b->tanggal_keluar?></td>
-                                            <td align = "center"><?= $p->nama_pemilik?></td>
+                                            <td align = "center"><?php 
+                                            foreach ($pemilik->tampil() as $o)
+                                            if ($b->id_pemilik == $o->id_pemilik) {
+                                                echo "$o->nama_pemilik";
+                                            }else
+                                             ?></td>
                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
                                             <td align = 'center'><a href="V_edit_inventory.php?id=<?= $b->id_inventory ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>

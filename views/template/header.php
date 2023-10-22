@@ -1,9 +1,11 @@
 <?php
 session_start();
 
-if($_SESSION['data'] == ""){
+if(!$_SESSION['data']['role']){   
     header("location: ../index.php");
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

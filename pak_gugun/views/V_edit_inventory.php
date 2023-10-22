@@ -17,55 +17,67 @@ $barang = new C_barang();
                 <div class="col-lg-12">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Edit Barang</h1>
+                            <h1 align="center" class="h4 text-gray-900 mb-4">Edit Barang</h1> <hr>
                         </div>
 
-                        <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
-                            <?php foreach($barang->edit($_GET['id']) as $b){?>
-                            <!--untuk menampung inputan id user -->
-                            <div class="form-group">
+                        <form align = 'center' action="../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">
+                            <?php foreach($barang->edit($_GET['id']) as $b){ ?>
+                        <!--untuk menampung inputan id user -->
+            
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="id" value ="<?= $b->id ?>" hidden>
-                            </div>
+                                    placeholder="Id" name="id" hidden>
+                                    <table align = 'center'>
+                        
                             <!--untuk menampung nama dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user"
-                                    placeholder="Nama Barang" name="nama" value ="<?= $b->nama_barang ?>">
-                            </div>
+                          <tr>
+                           <tr> <td>Nama Barang</td><td>:</td> <td><input type="text" class="form-control form-control-user"
+                                    placeholder="Nama Barang" name="nama"></td>  </tr>
+                          
                             <!--untuk menampung email dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Quantity" name="qty" value ="<?= $b->qty ?>">
-                            </div>
+                            
+                        <tr>    <td>Jumlah Barang</td><td>:</td> <td><input type="text" class="form-control form-control-user" id="qty"
+                                    placeholder="Jumlah Barang" name="qty">
+</td></tr>
 
                             <!--untuk menampung password dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="password"
-                                    placeholder="Harga" name="harga"value ="<?= $b->harga ?>">
-                            </div>
+                            <tr><td>Jenis Barang</td><td>:</td> 
+                                <td><input type="text" class="form-control form-control-user"
+                                    placeholder="Jenis Barang" name="harga">
+</td></tr>
+
+                           <tr> <td>Tanggal Masuk</td><td>:</td> 
+                               <td> <input type="date" class="form-control form-control-user"
+                                    placeholder="Tanggal Masuk" name="masuk">
+</td></tr>
+
+                           <tr> <td>Tanggal Keluar</td><td>:</td> 
+                                <td><input type="date" class="form-control form-control-user"
+                                    placeholder="Tanggal Keluar" name="keluar">
+</td></tr>
+
+                           <tr> <td>Nama Pemilik</td><td>:</td> 
+                              <td>  <select class="form-control form-control-user"
+                                    placeholder="Nama Pemilik" name="pemilik">
+                                    <option value="?">siapa?</option>
+                                    <?php foreach ($pemilik->tampil() as $p){ ?>
+                                <option value="<?= $p->id_pemilik; ?>"><?= $p->nama_pemilik; ?></option>
+                                  
+                                </select>
+</td></tr>
 
                             <!--untuk menampung nama dari user-->
-                            <div class="form-group">
-                                <input type="file" class="form-control form-control-user" id="photo"
-                                    value="<?= $b->nama_photo ?>" name="photo" hidden>
-                            </div>
-                           
-                            <div class="input-field">
-                                <input type="file" value="Choose File" id="photo" name="photo">
-                            </div>
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="photo"
+                                    placeholder="photo" name="role" hidden>
+                            </div> -->
 
-                            <div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="register" name="register">
-                            </div>
-
-                            <?php 
-                            }
-                            ?>
-
-                        </form>
+                            <tr></tr><td><td></td></td><td><div class="input-field">
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Submit" id="" name="tambah">
+                            </div></td><hr>
+                            </tr>
+                            <?php } } ?>
+                        </form> 
                         
-                
-                       
                     </div>
                 </div>
             </div>

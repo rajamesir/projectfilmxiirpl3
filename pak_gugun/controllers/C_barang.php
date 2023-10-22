@@ -20,11 +20,11 @@ class C_barang{
          return $hasil;
      }
 
-    public function tambah_barang($id, $nama_barang, $qty, $jenis, $nama_photo, $tgl_keluar, $id_pemilik){
+    public function tambah_barang($id_inventory, $nama_barang, $jumlah_barang, $jenis_barang, $tanggal_masuk, $tanggal_keluar, $id_pemilik){
 
         $conn = new C_koneksi();
 
-        $sql = "INSERT INTO `barang`(`id_inventory`, `nama_barang`, `jumlah_barang`, `jenis_barang`, `tanggal_masuk`, `tanggal_keluar`, `id_pemilik`) VALUES ($id, '$nama_barang', '$qty', '$jenis', '$nama_photo', '$tgl_keluar', $id_pemilik)";
+        $sql = "INSERT INTO `barang`(`id_inventory`, `nama_barang`, `jumlah_barang`, `jenis_barang`, `tanggal_masuk`, `tanggal_keluar`, `id_pemilik`) VALUES ($id_inventory, '$nama_barang', '$jumlah_barang', '$jenis_barang', '$tanggal_masuk', '$tanggal_keluar', $id_pemilik)";
         // var_dump($sql);
         $query = mysqli_query($conn->conn(), $sql);
         
@@ -39,16 +39,16 @@ class C_barang{
 
     }
 
-    // public function tambah($id=0,$nama_barang,$qty,$jenis,$nama_photo) {
+    // public function tambah($id=0,$nama_barang,$jumlah_barang,$jenis_barang,$tanggal_masuk) {
 
     //     $conn = new C_koneksi();
 
-    //     $sql = "INSERT INTO barang VALUES ($id,'$nama','$qty','$jenis','$nama_photo')";
+    //     $sql = "INSERT INTO barang VALUES ($id,'$nama','$jumlah_barang','$jenis_barang','$tanggal_masuk')";
     //     var_dump($sql);
 
     //    $query = mysqli_query($conn->conn(),$sql);
 
-    //      //$sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$jenis','$photo')";
+    //      //$sql = "INSERT INTO barang VALUES ('$id','$nama','$jumlah_barang','$jenis_barang','$photo')";
     //      //var_dump($sql);
 
     //     // $query = mysqli_query($conn->conn(), $sql);
@@ -61,10 +61,10 @@ class C_barang{
     //     }
     // }
 
-    public function edit($id) {
+    public function edit($id_inventory) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM barang WHERE id_inventory = '$id'";
+        $sql ="SELECT * FROM barang WHERE id_inventory = '$id_inventory'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
@@ -76,11 +76,11 @@ class C_barang{
         return $hasil;
     }
 
-    public function update ($id, $nama_barang, $qty, $jenis, $nama_photo, $tgl_keluar, $id_pemilik) {
+    public function update ($id_inventory, $nama_barang, $jumlah_barang, $jenis_barang, $tanggal_masuk, $tanggal_keluar, $id_pemilik) {
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE `barang` SET `nama_barang` = '$nama_barang', `jumlah_barang` = '$qty', `jenis_barang` = '$jenis', `tanggal_masuk` = '$nama_photo', `tanggal_keluar` = '$tgl_keluar' 'id_pemilik' = '$id_pemilik' WHERE `id_inventory` = '$id'";
+        $sql = "UPDATE `barang` SET `nama_barang` = '$nama_barang', `jumlah_barang` = '$jumlah_barang', `jenis_barang` = '$jenis_barang', `tanggal_masuk` = '$tanggal_masuk', `tanggal_keluar` = '$tanggal_keluar' 'id_pemilik' = '$id_pemilik' WHERE `id_inventory` = '$id'";
 
         $query = mysqli_query($conn->conn(), $sql);
         
@@ -92,10 +92,10 @@ class C_barang{
             echo "Dataa gagal diubah";
         }
     }
-    public function delete($id){
+    public function delete($id_inventory){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM barang WHERE id_inventory = '$id'";
+        $sql = "DELETE FROM barang WHERE id_inventory = '$id_inventory'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
