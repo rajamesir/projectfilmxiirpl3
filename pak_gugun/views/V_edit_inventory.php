@@ -3,8 +3,9 @@
 //modular memanggil file dari folder tampleate
 
 include_once '../controllers/C_barang.php';
-
 $barang = new C_barang();
+include_once '../controllers/C_pemilik.php';
+$pemilik = new C_pemilik();
 ?>
 <body class="bg-gradient-primary">
 
@@ -20,8 +21,8 @@ $barang = new C_barang();
                             <h1 align="center" class="h4 text-gray-900 mb-4">Edit Barang</h1> <hr>
                         </div>
 
-                        <form align = 'center' action="../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">
-                            <?php foreach($barang->edit($_GET['id']) as $b){ ?>
+                        <form align = 'center' action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
+                            <?php foreach ($barang->edit($_GET['id']) as $b){ ?>
                         <!--untuk menampung inputan id user -->
             
                                 <input type="text" class="form-control form-control-user"
@@ -64,18 +65,13 @@ $barang = new C_barang();
                                   
                                 </select>
 </td></tr>
-
-                            <!--untuk menampung nama dari user-->
-                            <!-- <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="photo"
-                                    placeholder="photo" name="role" hidden>
-                            </div> -->
-
-                            <tr></tr><td><td></td></td><td><div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Submit" id="" name="tambah">
-                            </div></td><hr>
-                            </tr>
                             <?php } } ?>
+                            <tr><td></td><td></td><td>
+                            <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="register" name="register">
+                            </td>
+                            </tr>
+                                    </table>
+                            
                         </form> 
                         
                     </div>

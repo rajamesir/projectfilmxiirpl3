@@ -17,46 +17,47 @@ $pemilik = new C_pemilik();
                 <div class="col-lg-12">
                     <div class="p-5">
                         <div class="text-center">
-                            <h1 class="h4 text-gray-900 mb-4">Edit Barang</h1>
+                            <h1 align="center" class="h4 text-gray-900 mb-4">Edit Barang</h1> <hr>
                         </div>
 
-                        <form action="../routers/R_pemilik.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
-                            <?php foreach($pemilik->edit($_GET['id_pemilik']) as $p){?>
-                            <!--untuk menampung inputan id user -->
-                            <div class="form-group">
+                        <form align = 'center' action="../routers/R_pemilik.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
+                            <?php foreach($pemilik->edit($_GET['id_pemilik']) as $b){ ?>
+                        <!--untuk menampung inputan id user -->
+            
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="id" value ="<?= $p->id_pemilik ?>" hidden>
-                            </div>
+                                    placeholder="Id" name="pemilik" hidden>
+                                    <table align = 'center'>
+                        
                             <!--untuk menampung nama dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user"
-                                    placeholder="Nama Barang" name="nama" value ="<?= $p->nama_pemilik ?>">
-                            </div>
+                          <tr>
+                           <tr> <td>Nama Pemilik</td><td>:</td> <td><input type="text" class="form-control form-control-user"
+                                    placeholder="Nama Pemilik" name="nama_pemilik"></td>  </tr>
+                          
                             <!--untuk menampung email dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="exampleInputEmail"
-                                    placeholder="Quantity" name="qty" value ="<?= $p->jk_pemilik ?>">
-                            </div>
+                            
+                        <tr>    <td>Jenis Kelamin</td><td>:</td> <td><select class="form-control form-control-user" id="qty"
+                                    placeholder="Jumlah Barang" name="jk_pemilik">
+                                    <option value = Laki-Laki>Laki-Laki</option>
+                                    <option value = Perempuan>Perempuan</option>
+                                    
+</td></tr>
 
                             <!--untuk menampung password dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="password"
-                                    placeholder="Harga" name="harga"value ="<?= $p->tanggal_lahir ?>">
-                            </div>
+                            <tr><td>Tanggal Lahir</td><td>:</td> 
+                                <td><input type="text" class="form-control form-control-user"
+                                    placeholder="Jenis Barang" name="tgl_lahir">
+</td></tr>
 
-                            <!--untuk menampung nama dari user-->
-                            <div class="input-field">
-                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Edit" id="register" name="register">
-                            </div>
+                           
 
-                            <?php 
-                            }
-                            ?>
-
-                        </form>
+                            <tr></tr><td><td></td></td><td><div class="input-field">
+                                <input type="submit" class="btn btn-primary btn-user btn-block" value="Submit" id="" name="update">
+                            </div></td><hr>
+                            </tr>
+                                    </table>
+                            <?php } ?>
+                        </form> 
                         
-                
-                       
                     </div>
                 </div>
             </div>

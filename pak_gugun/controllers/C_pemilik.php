@@ -33,7 +33,7 @@ class C_pemilik{
             echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_pemilik.php'</script>";
             
         }else {
-            echo "Selalu Gagal ";
+            echo "<script>alert('Kau masukkan apa ni??!!');window.location='../views/V_pemilik.php'</script>";
             
         }
 
@@ -61,10 +61,10 @@ class C_pemilik{
     //     }
     // }
 
-    public function edit($id) {
+    public function edit($id_pemilik) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM pemilik_barang WHERE id_pemilik = '$id'";
+        $sql ="SELECT * FROM pemilik_barang WHERE id_pemilik = $id_pemilik";
 
         $query = mysqli_query($conn->conn(), $sql);
 
@@ -95,7 +95,7 @@ class C_pemilik{
     public function delete($id_pemilik){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM pemilik_barang WHERE id_pemilik = $id_pemilik";
+        $sql = "DELETE FROM pemilik_barang WHERE id_pemilik = '$id_pemilik'";
 
         $query = mysqli_query($conn->conn(), $sql);
 

@@ -16,9 +16,14 @@ class C_barang{
  
              $hasil[] = $q;
          }
- 
-         return $hasil;
+
+
+         if (empty($hasil)) {
+            echo "<h2>Tabel tidak ada isinya</h2>";
+     } else {
+        return $hasil;
      }
+    }
 
     public function tambah_barang($id_inventory, $nama_barang, $jumlah_barang, $jenis_barang, $tanggal_masuk, $tanggal_keluar, $id_pemilik){
 
@@ -80,7 +85,7 @@ class C_barang{
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE `barang` SET `nama_barang` = '$nama_barang', `jumlah_barang` = '$jumlah_barang', `jenis_barang` = '$jenis_barang', `tanggal_masuk` = '$tanggal_masuk', `tanggal_keluar` = '$tanggal_keluar' 'id_pemilik' = '$id_pemilik' WHERE `id_inventory` = '$id'";
+        $sql = "UPDATE `barang` SET `nama_barang` = '$nama_barang', `jumlah_barang` = '$jumlah_barang', `jenis_barang` = '$jenis_barang', `tanggal_masuk` = '$tanggal_masuk', `tanggal_keluar` = '$tanggal_keluar' 'id_pemilik' = '$id_pemilik' WHERE `id_inventory` = '$id_inventory'";
 
         $query = mysqli_query($conn->conn(), $sql);
         
