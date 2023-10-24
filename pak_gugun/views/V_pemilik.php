@@ -25,7 +25,7 @@ $pemilik = new C_pemilik();
                         <!--untuk menampung inputan id user -->
             
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="pemilik" hidden>
+                                    placeholder="Id" name="id" hidden>
                                     <table align = 'center'>
                         
                             <!--untuk menampung nama dari user-->
@@ -58,9 +58,10 @@ $pemilik = new C_pemilik();
                                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Submit" id="" name="tambah">
                             </div></td>
                             </tr>
+                            
                         </form>
-                        <hr>
                         <div class="table-responsive">
+
                                 <table rules="all" border="1" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -90,7 +91,7 @@ $pemilik = new C_pemilik();
                                             <td align = 'center'><a href="V_edit_pemilik.php?id=<?= $p->id_pemilik ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>
-                                    <a onclick="return confirm('Yakin cuy? yakin data mau dihapus?')" href = "../routers/R_pemilik.php?id=<?= $p->id_pemilik ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
+                                    <a onclick="return confirm('Yakin cuy? yakin data mau dihapus?')" href="../routers/R_pemilik.php?id=<?= $p->id_pemilik ?>&aksi=hapus">
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>
