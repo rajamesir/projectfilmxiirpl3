@@ -23,10 +23,61 @@
 
 </head>
 
-<body align = 'center' class="bg-gradient-primary">
+<body class="bg-gradient-primary">
 
-  <h1>BUATLAH TABELBELBELBELBEL</h1>
-    <h2><a href="views/V_pemilik.php">Pemilik</a> | <a href="views/V_inventory.php">Inventory</a></h2>
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Ayo Login!!</h1>
+                            </div>
+                            <form action="routers/r_login.php?aksi=login" method="POST" class="user">
+                                
+                                <!-- ini form email yang menerima inputan email dari user  -->
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="email"
+                                        placeholder="Email Address" name="email">
+                                </div>
+
+                                <!-- ini form password yang menerima inputan password dari user  -->
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" id="password"
+                                        placeholder="password" name="password">
+                                </div>
+
+                                <div class="input-field">
+                                    <input type="submit" class="btn btn-primary btn-user btn-block" value="Login" id="" name="login">
+                                </div>
+
+                                <hr>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="register.php">Belum punya akun? Register dulu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+
 </body>
 
 </html>

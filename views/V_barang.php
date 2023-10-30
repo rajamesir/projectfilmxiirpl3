@@ -44,7 +44,7 @@ $barang = new C_barang();
                                         ?>
         
                                         <tr>
-                                            <-- yang ada di dalam $b itu nama kolom dari tabel di database
+                                            <!-- <-- yang ada di dalam $b itu nama kolom dari tabel di database -->
                                             <td><?php echo $nomor++?></td>
                                             <td><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
