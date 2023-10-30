@@ -21,17 +21,17 @@ $pemilik = new C_pemilik();
                         </div>
 
                         <form align = 'center' action="../routers/R_pemilik.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
-                            <?php foreach($pemilik->edit($_GET['id_pemilik']) as $b){ ?>
+                            <?php foreach($pemilik->edit($_GET['id']) as $p){ ?>
                         <!--untuk menampung inputan id user -->
             
                                 <input type="text" class="form-control form-control-user"
-                                    placeholder="Id" name="pemilik" hidden>
+                                    placeholder="Id" name="id" value="<?= $p->id_pemilik ?>" hidden>
                                     <table align = 'center'>
                         
                             <!--untuk menampung nama dari user-->
                           <tr>
                            <tr> <td>Nama Pemilik</td><td>:</td> <td><input type="text" class="form-control form-control-user"
-                                    placeholder="Nama Pemilik" name="nama_pemilik"></td>  </tr>
+                                    placeholder="Nama Pemilik" name="nama_pemilik" value="<?= $p->nama_pemilik?>"></td>  </tr>
                           
                             <!--untuk menampung email dari user-->
                             
@@ -44,8 +44,8 @@ $pemilik = new C_pemilik();
 
                             <!--untuk menampung password dari user-->
                             <tr><td>Tanggal Lahir</td><td>:</td> 
-                                <td><input type="text" class="form-control form-control-user"
-                                    placeholder="Jenis Barang" name="tgl_lahir">
+                                <td><input type="date" class="form-control form-control-user"
+                                    placeholder="Jenis Barang" name="tgl_lahir" value="<?= $p->tanggal_lahir?>">
 </td></tr>
 
                            

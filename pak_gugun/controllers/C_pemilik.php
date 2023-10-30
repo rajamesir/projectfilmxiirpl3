@@ -24,13 +24,13 @@ class C_pemilik{
 
         $conn = new C_koneksi();
 
-        $sql = "INSERT INTO pemilik_barang VALUES ($id_pemilik, '$nama', '$jk', '$tgl_lahir')";
+        $sql = "INSERT INTO `pemilik_barang`(`id_pemilik`, `nama_pemilik`, `jk_pemilik`, `tanggal_lahir`) VALUES ($id_pemilik, '$nama', '$jk', '$tgl_lahir')";
         // var_dump($sql);
         $query = mysqli_query($conn->conn(), $sql);
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_pemilik.php'</script>";
+            echo "hah";
             
         }else {
             echo "<script>alert('Kau masukkan apa ni??!!');window.location='../views/V_pemilik.php'</script>";
@@ -95,7 +95,7 @@ class C_pemilik{
     public function delete($id_pemilik){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM pemilik_barang WHERE id_pemilik = '$id_pemilik'";
+        $sql = "DELETE FROM pemilik_barang WHERE `pemilik_barang`.`id_pemilik` = '$id_pemilik'";
 
         $query = mysqli_query($conn->conn(), $sql);
 

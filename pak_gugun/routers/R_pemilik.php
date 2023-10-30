@@ -3,7 +3,7 @@ include_once '../controllers/C_pemilik.php';
 $pemilik = new C_pemilik();
 
 if ($_GET['aksi'] == 'tambah') {
-    $id_pemilik = $_POST['pemilik'];
+    $id_pemilik = $_POST['id'];
     $nama = $_POST['nama_pemilik'];
     $jk = $_POST['jk_pemilik'];
     $tgl_lahir = $_POST['tgl_lahir'];
@@ -12,7 +12,7 @@ if ($_GET['aksi'] == 'tambah') {
             
             
 }elseif ($_GET['aksi'] == 'update') {
-    $id_pemilik = $_POST['pemilik'];
+    $id_pemilik = $_POST['id'];
     $nama = $_POST['nama_pemilik'];
     $jk = $_POST['jk_pemilik'];
     $tgl_lahir = $_POST['tgl_lahir'];
@@ -22,7 +22,7 @@ if ($_GET['aksi'] == 'tambah') {
 
 
 }elseif ($_GET['aksi'] == 'hapus') {
-    $id_pemilik = $_GET['pemilik'];
+    $id_pemilik = $_GET['id'];
 
     $pemilik->delete($id_pemilik);
 }

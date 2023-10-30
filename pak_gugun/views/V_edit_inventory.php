@@ -32,35 +32,35 @@ $pemilik = new C_pemilik();
                             <!--untuk menampung nama dari user-->
                           <tr>
                            <tr> <td>Nama Barang</td><td>:</td> <td><input type="text" class="form-control form-control-user"
-                                    placeholder="Nama Barang" name="nama"></td>  </tr>
+                                    placeholder="Nama Barang" name="nama" value="<?= $b->nama_barang?>"></td>  </tr>
                           
                             <!--untuk menampung email dari user-->
                             
                         <tr>    <td>Jumlah Barang</td><td>:</td> <td><input type="text" class="form-control form-control-user" id="qty"
-                                    placeholder="Jumlah Barang" name="qty">
+                                    placeholder="Jumlah Barang" name="qty" value="<?= $b->jumlah_barang?>">
 </td></tr>
 
                             <!--untuk menampung password dari user-->
                             <tr><td>Jenis Barang</td><td>:</td> 
                                 <td><input type="text" class="form-control form-control-user"
-                                    placeholder="Jenis Barang" name="harga">
+                                    placeholder="Jenis Barang" name="harga" value="<?= $b->jenis_barang?>">
 </td></tr>
 
                            <tr> <td>Tanggal Masuk</td><td>:</td> 
                                <td> <input type="date" class="form-control form-control-user"
-                                    placeholder="Tanggal Masuk" name="masuk">
+                                    placeholder="Tanggal Masuk" name="masuk" value="<?= $b->tanggal_masuk?>">
 </td></tr>
 
                            <tr> <td>Tanggal Keluar</td><td>:</td> 
                                 <td><input type="date" class="form-control form-control-user"
-                                    placeholder="Tanggal Keluar" name="keluar">
+                                    placeholder="Tanggal Keluar" name="keluar" value="<?= $b->tanggal_keluar?>">
 </td></tr>
 
                            <tr> <td>Nama Pemilik</td><td>:</td> 
                               <td>  <select class="form-control form-control-user"
-                                    placeholder="Nama Pemilik" name="pemilik">
+                                    placeholder="Nama Pemilik" name="id" value="<?= $b->nama_barang?>">
                                     <option value="?">siapa?</option>
-                                    <?php foreach ($pemilik->tampil() as $p){ ?>
+                                    <?php foreach ($pemilik->edit($_GET['id']) as $p){ ?>
                                 <option value="<?= $p->id_pemilik; ?>"><?= $p->nama_pemilik; ?></option>
                                   
                                 </select>

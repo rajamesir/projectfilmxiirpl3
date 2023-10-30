@@ -38,7 +38,7 @@ class C_barang{
             echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_inventory.php'</script>";
             
         }else {
-            echo "Selalu Gagal ";
+            echo "<script>alert('Kau masukkan ape kat tabel ni?!');window.location='../views/V_inventory.php'</script>";
             
         }
 
@@ -85,13 +85,13 @@ class C_barang{
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE `barang` SET `nama_barang` = '$nama_barang', `jumlah_barang` = '$jumlah_barang', `jenis_barang` = '$jenis_barang', `tanggal_masuk` = '$tanggal_masuk', `tanggal_keluar` = '$tanggal_keluar' 'id_pemilik' = '$id_pemilik' WHERE `id_inventory` = '$id_inventory'";
+        $sql = "UPDATE `barang` SET `nama_barang`='$nama_barang',`jumlah_barang`='$jumlah_barang',`jenis_barang`='$jenis_barang',`tanggal_masuk`='$tanggal_masuk',`tanggal_keluar`='$tanggal_keluar',`id_pemilik`=' $id_pemilik' WHERE `id_inventory`='$id_inventory'";
 
         $query = mysqli_query($conn->conn(), $sql);
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_inventory.php'</script>";
 
         }else {
             echo "Dataa gagal diubah";
