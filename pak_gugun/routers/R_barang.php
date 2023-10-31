@@ -9,7 +9,7 @@ if ($_GET['aksi'] == 'tambah') {
     $jenis_barang = $_POST['harga'];
     $tanggal_masuk = $_POST['masuk'];
     $tanggal_keluar = $_POST['keluar'];
-    $id_pemilik = $_POST['pemilik'];
+    $id_pemilik = $_POST['id'];
 
     $barang->tambah_barang($id_inventory = 0, $nama_barang, $jumlah_barang, $jenis_barang, $tanggal_masuk, $tanggal_keluar, $id_pemilik);
             
@@ -21,7 +21,7 @@ if ($_GET['aksi'] == 'tambah') {
     $jenis_barang = $_POST['harga'];
     $tanggal_masuk = $_POST['masuk'];
     $tanggal_keluar = $_POST['keluar'];
-    $id_pemilik = $_POST['pemilik'];
+    $id_pemilik = $_POST['id'];
 
     $barang->update($id_inventory, $nama_barang, $jumlah_barang, $jenis_barang, $tanggal_masuk, $tanggal_keluar, $id_pemilik);
    

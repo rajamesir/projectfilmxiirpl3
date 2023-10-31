@@ -60,8 +60,8 @@ $pemilik = new C_pemilik();
                               <td>  <select class="form-control form-control-user"
                                     placeholder="Nama Pemilik" name="id" value="<?= $b->nama_barang?>">
                                     <option value="?">siapa?</option>
-                                    <?php foreach ($pemilik->edit($_GET['id']) as $p){ ?>
-                                <option value="<?= $p->id_pemilik; ?>"><?= $p->nama_pemilik; ?></option>
+                                    <?php foreach ($pemilik->edit($_GET['id']) as $o){ ?>
+                                <option value="<?= $o->id_pemilik; ?>"><?= $o->nama_pemilik; ?></option>
                                   
                                 </select>
 </td></tr>

@@ -30,7 +30,7 @@ class C_pemilik{
         
 
         if ($query) {
-            echo "hah";
+            echo "<script>alert('Berhasill!!');window.location='../views/V_pemilik.php'</script>";
             
         }else {
             echo "<script>alert('Kau masukkan apa ni??!!');window.location='../views/V_pemilik.php'</script>";
@@ -64,7 +64,7 @@ class C_pemilik{
     public function edit($id_pemilik) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM pemilik_barang WHERE id_pemilik = $id_pemilik";
+        $sql ="SELECT * FROM pemilik_barang WHERE id_pemilik = '$id_pemilik'";
 
         $query = mysqli_query($conn->conn(), $sql);
 

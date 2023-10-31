@@ -15,7 +15,7 @@ class C_login {
         $koneksi = new C_koneksi();
 
         //untuk menambahkan data objek dari kelas c_koneksi
-        $sql = "INSERT INTO user VALUES ('$id', '$nama', '$email','$pass' ,'$role')";
+        $sql = "INSERT INTO users VALUES ('$id', '$nama', '$email','$pass' ,'$role')";
         //$sql2 = "INSERT INTO (id, nama, email, pass, role, photo) user VALUES ('$id', '$nama', '$email','$pass' ,'$role', '')";
         
         //mysqli_query=fungsi bawa an dari php
@@ -25,7 +25,7 @@ class C_login {
 
         //untuk mengecek data hasil dari query
         if ($query) {
-            echo "Data berhasil di tambahkan";
+            echo "<script>alert('Berhasil!! Bagus juga nama kau eh');window.location='../index.php'</script>";
         }else{
             echo "Data gagal di tambahkan";
         }
@@ -42,7 +42,7 @@ class C_login {
         if (isset($_POST['login'])) {
         
             // perintah untuk mengambil semua data dari tabel user berdasarkan email yang di inputkan oleh user 
-            $sql = "SELECT * from user WHERE email = '$email'";
+            $sql = "SELECT * from users WHERE email = '$email'";
 
             //exsekutor perintah diatas
             $query = mysqli_query($conn->conn(), $sql);  
@@ -87,7 +87,7 @@ class C_login {
                         $_SESSION["role"] = $data["role"];
 
                         // jika login berhasil dan rolenya sebagai user maka akan berpindah kehalaman home 
-                        header("Location: hal_depan.php");
+                        header("Location: ../hal_depan.php");
 
                         //untuk menghentikan proses di bawahnya
                         exit;

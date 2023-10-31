@@ -59,7 +59,7 @@ $pemilik = new C_pemilik();
 
                            <tr> <td>Nama Pemilik</td><td>:</td> 
                               <td>  <select class="form-control form-control-user"
-                                    placeholder="Nama Pemilik" name="pemilik">
+                                    placeholder="Nama Pemilik" name="id">
                                     <option value="?">siapa?</option>
                                     <?php foreach ($pemilik->tampil() as $p){ ?>
                                 <option value="<?= $p->id_pemilik; ?>"><?= $p->nama_pemilik; ?></option>
@@ -124,7 +124,7 @@ $pemilik = new C_pemilik();
                                             foreach ($pemilik->tampil() as $o)
                                             if ($b->id_pemilik == $o->id_pemilik) {
                                                 echo "$o->nama_pemilik";
-                                            }else
+                                            }
                                              ?></td>
                                             <!-- tanda tanya setelah nama file berarti mempunyai fungsi yang sama dengan get-->
                                             <td align = 'center'><a href="V_edit_inventory.php?id=<?= $b->id_inventory ?> "class="btn btn-primary btn-icon-split">

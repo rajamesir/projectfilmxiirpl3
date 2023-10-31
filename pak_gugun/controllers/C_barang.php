@@ -30,15 +30,15 @@ class C_barang{
         $conn = new C_koneksi();
 
         $sql = "INSERT INTO `barang`(`id_inventory`, `nama_barang`, `jumlah_barang`, `jenis_barang`, `tanggal_masuk`, `tanggal_keluar`, `id_pemilik`) VALUES ($id_inventory, '$nama_barang', '$jumlah_barang', '$jenis_barang', '$tanggal_masuk', '$tanggal_keluar', $id_pemilik)";
-        // var_dump($sql);
+        
         $query = mysqli_query($conn->conn(), $sql);
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_inventory.php'</script>";
+            echo "duarrrrrrrrrrr";
             
         }else {
-            echo "<script>alert('Kau masukkan ape kat tabel ni?!');window.location='../views/V_inventory.php'</script>";
+            echo "LAH";
             
         }
 
