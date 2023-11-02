@@ -11,17 +11,17 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Website Saya <sup>anjir</sup></div>
+                <div class="sidebar-brand-text mx-3"><?= $_SESSION['data'] ['nama'] ?><sup><?= $_SESSION['data'] ['role'] ?></sup></div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
+            <?php if($_SESSION['data']['role'] == 'admin'){ ?>
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="../">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard Admin</span></a>
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             
@@ -60,10 +60,43 @@
             <li class="nav-item active">
                 <a class="nav-link" href="V_barang.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                    <span>Table Admin</span></a>
             </li>
-
+            <hr>
+            <li class="nav-item active">
+                <a class="nav-link" href="V_laporan.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Laporan</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="V_barang.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Transaksi</span></a>
+            </li>
+        <?php }elseif($_SESSION['data']['role'] == 'user') {
+           ?>
+           <li class="nav-item active">
+                <a class="nav-link" href="home_user.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Dashboard</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="V_barang_user.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Film-Film</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="V_barang.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Contact</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="V_barang.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>About</span></a>
+            </li>
             <!-- Divider -->
+        <?php } ?>
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->

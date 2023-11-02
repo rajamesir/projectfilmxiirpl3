@@ -11,9 +11,7 @@ $barang = new C_barang();
             <div class = "row">
                 <div class = "col-lg-2"></div>
                 <div class = "col-lg-8">
-                <a href="V_tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
-                                    </a>          
+            
                 <!-- /.container-fluid -->
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -50,6 +48,10 @@ $barang = new C_barang();
                                             <div style="display: flex ; justify-content: center; align-items: center;">
                                                 <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="50" height="65">
                                         </div></td>
+                                        <td align = 'center'><a href="V_ulas.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
+                                        <span class="text">Ulas</span>
+                                    </a>
+</td>
                                         </tr>
                                     
                                         <?php } ?>

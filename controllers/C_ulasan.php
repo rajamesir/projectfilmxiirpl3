@@ -1,0 +1,106 @@
+<?php
+
+   include_once 'C_koneksi.php';
+class C_ulasan{
+
+    public function tampil() {
+
+       $conn = new C_koneksi();
+
+        $sql = "SELECT * FROM ulasan ORDER BY id_ulasan DESC";
+
+        $query = mysqli_query($conn->conn(),$sql);
+
+        while ($q = mysqli_fetch_object($query)) {
+
+            $hasil[] = $q;
+        }
+
+        return $hasil;
+    }
+
+    public function tambah_barang($id_ulasan, $id_barang, $id_user, $ulasan, $rating){
+
+        $conn = new C_koneksi();
+
+        // $sql = " INSERT INTO barang VALUES ($id_ulasan, '$nama', '$qty', '$harga', '$nama_photo')";
+        // var_dump($sql);
+        $query = mysqli_query($conn->conn(), "INSERT INTO ulasan VALUES ($id_ulasan, '$id_barang', $id_user, $ulasan, '$rating')");
+        
+
+        if ($query) {
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            
+        }else {
+            echo "Selalu Gagal ";
+            
+        }
+
+    }
+
+    // public function tambah($id=0,$nama,$qty,$harga,$nama_photo) {
+
+    //     $conn = new C_koneksi();
+
+    //     $sql = "INSERT INTO barang VALUES ($id,'$nama','$qty','$harga','$nama_photo')";
+    //     var_dump($sql);
+
+    //    $query = mysqli_query($conn->conn(),$sql);
+
+    //      //$sql = "INSERT INTO barang VALUES ('$id','$nama','$qty','$harga','$photo')";
+    //      //var_dump($sql);
+
+    //     // $query = mysqli_query($conn->conn(), $sql);
+    //     var_dump($query);
+
+    //     if ($query) {
+    //         echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+    //     }else{
+    //         echo "Selalu Gagal ";
+    //     }
+    // }
+
+    public function edit($id_ulasan) {
+        $conn = new C_koneksi();
+
+        $sql ="SELECT * FROM ulasan WHERE id_ulasan = '$id_ulasan'";
+
+        $query = mysqli_query($conn->conn(), $sql);
+
+        while ($q = mysqli_fetch_object($query)) {
+
+            $hasil[] = $q;
+        }
+
+        return $hasil;
+    }
+
+    public function update ($id_ulasan, $id_barang, $id_user, $ulasan, $rating) {
+
+        $conn = new C_koneksi();
+
+        $sql = "UPDATE `ulasan` SET `id_barang` = '$id_barang', `id_user` = '$id_user', `ulasan` = '$ulasan', `rating` = '$rating' WHERE `id_ulasan` = '$id_ulasan'";
+
+        $query = mysqli_query($conn->conn(), $sql);
+        
+
+        if ($query) {
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+
+        }else {
+            echo "Dataa gagal diubah";
+        }
+    }
+    public function delete($id_ulasan){
+        $conn = new C_koneksi();
+        
+        $sql = "DELETE FROM ulasan WHERE id_ulasan = '$id_ulasan'";
+
+        $query = mysqli_query($conn->conn(), $sql);
+
+        header("Location:../views/V_barang.php");
+
+    }
+
+}
+?>
