@@ -93,12 +93,12 @@ class C_login {
                         exit;
                     
                     }else {
-                        echo "cek password";
+                        echo "<script>alert('Coba cek password. Ada yang salah');window.location='../index.php'</script>";
                     }
                     
                     //untuk role pengguna bukan sebagai admin dan user
                     }else {
-                        echo "username ngasal maneh mah";
+                        echo "<script>alert('Username tidak dikenali');window.location='../index.php'</script>";
                     }
 
                     

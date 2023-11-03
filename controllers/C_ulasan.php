@@ -7,7 +7,7 @@ class C_ulasan{
 
        $conn = new C_koneksi();
 
-        $sql = "SELECT * FROM ulasan ORDER BY id_ulasan DESC";
+        $sql = "SELECT * FROM ulasan JOIN user ON ulasan.id_user = user.id JOIN produk ON ulasan.id_barang = produk.id ORDER BY id_ulasan DESC;";
 
         $query = mysqli_query($conn->conn(),$sql);
 
@@ -22,14 +22,14 @@ class C_ulasan{
     public function tambah_barang($id_ulasan, $id_barang, $id_user, $ulasan, $rating){
 
         $conn = new C_koneksi();
-
+        $sql = "INSERT INTO ulasan VALUES ($id_ulasan, $id_barang, $id_user, '$ulasan', '$rating')";
         // $sql = " INSERT INTO barang VALUES ($id_ulasan, '$nama', '$qty', '$harga', '$nama_photo')";
         // var_dump($sql);
-        $query = mysqli_query($conn->conn(), "INSERT INTO ulasan VALUES ($id_ulasan, '$id_barang', $id_user, $ulasan, '$rating')");
+        $query = mysqli_query($conn->conn(), $sql);
         
-
+        // var_dump($sql);
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang_user.php'</script>";
             
         }else {
             echo "Selalu Gagal ";
