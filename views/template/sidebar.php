@@ -16,78 +16,66 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-            <?php if($_SESSION['data']['role'] == 'admin'){ ?>
+            <?php if($_SESSION['data']['role'] == 'admin') { ?>
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard Admin</span></a>
-            </li>
-            <!-- Nav Item - Pages Collapse Menu -->
-            
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-               
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
-                    </div>
-                </div>
+                    <span>Dashboard Untuk admin</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                
-            </li>
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="V_barang.php">
+             <a class="nav-link" href="V_barang.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Table Admin</span></a>
-            </li>
-            <hr>
-            <li class="nav-item active">
-                <a class="nav-link" href="V_laporan.php">
-                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tabel untuk Admin</span></a>
+                    
+            </li>  
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="lapor.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Laporan</span></a>
             </li>
+
+            <!-- Divider -->
+            
+
+
+            <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="V_barang.php">
+                <a class="nav-link" href="images (10).jpg">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Transaksi</span></a>
-            </li>
-        <?php }elseif($_SESSION['data']['role'] == 'user') {
-           ?>
-           <li class="nav-item active">
-                <a class="nav-link" href="home_user.php">
+                    
+            </li> 
+            <li class="nav-item active">
+                <a class="nav-link" href="V_ulasan_user.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Dashboard</span></a>
+                    <span>Ulasan dari User</span></a>
+                    
+            </li>  
+
+            <?php }elseif($_SESSION['data']['role'] == 'user') { ?>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard Untuk User</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="V_barang_user.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Film-Film</span></a>
+                    <span>Tabel Untuk User</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="V_barang.php">
-                    <i class="fas fa-fw fa-table"></i>
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Contact</span></a>
             </li>
             <li class="nav-item active">
@@ -95,8 +83,9 @@
                     <i class="fas fa-fw fa-table"></i>
                     <span>About</span></a>
             </li>
+
+            <?php } ?>
             <!-- Divider -->
-        <?php } ?>
             <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->

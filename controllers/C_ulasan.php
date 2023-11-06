@@ -32,7 +32,7 @@ class C_ulasan{
             echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang_user.php'</script>";
             
         }else {
-            echo "Selalu Gagal ";
+            echo "Selalu Gagal $sql $query";
             
         }
 

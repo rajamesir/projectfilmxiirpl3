@@ -25,9 +25,9 @@ class C_login {
 
         //untuk mengecek data hasil dari query
         if ($query) {
-            echo "Data berhasil di tambahkan";
+            echo "<script>alert('User ditambahkan! Ayo Login!');window.location='../index.php'</script>";
         }else{
-            echo "Data gagal di tambahkan";
+            echo "<script>alert('User gagal ditambahkan. Ulangi lagi atau hubungi call center');window.location='../index.php'</script>";
         }
     }
 
