@@ -26,8 +26,8 @@ $barang = new C_barang();
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Qty</th>
+                                            <th>Film</th>
+                                            <th>Tanggal Release</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
                                             <th>Action</th>
@@ -46,7 +46,9 @@ $barang = new C_barang();
                                         <tr>
                                             <!-- <-- yang ada di dalam $b itu nama kolom dari tabel di database -->
                                             <td><?php echo $nomor++?></td>
-                                            <td><?= $b->nama_barang?></td>
+                                            <td align="center"><div style="display: flex ; justify-content: center; align-items: center;">
+                                                <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="100" height="160">
+                                        </div><br><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
                                             <td>
@@ -70,7 +72,7 @@ $barang = new C_barang();
                                     <tr>
                                             <th>No</th>
                                             <th>Nama Barang</th>
-                                            <th>Qty</th>
+                                            <th>Tanggal Release</th>
                                             <th>Harga</th>
                                             <th>Photo</th>
                                             <th>Action</th>

@@ -37,15 +37,16 @@ include_once 'template/topbar.php';
                                     placeholder="Nama Barang" name="nama">
                             </div>
                             <!--untuk menampung email dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="qty"
-                                    placeholder="Quantity" name="qty">
+                            <table>
+                            <div class="form-group"><tr>
+                               <td>Tanggal Release</td><td>:</td> <td><input type="date"  id="qty"
+                                    placeholder="Quantity" name="qty"></td></tr>
                             </div>
 
                             <!--untuk menampung password dari user-->
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-user" id="harga"
-                                    placeholder="Harga" name="harga">
+                            <div class="form-group"><tr>
+                            <td>Sinopsis</td><td>:</td>  <td><input type="text" id="harga"
+                                    value="Harga" name="harga"></td></tr>
                             </div>
 
                             <!--untuk menampung nama dari user-->
@@ -54,9 +55,10 @@ include_once 'template/topbar.php';
                                     placeholder="photo" name="role" hidden>
                             </div> -->
                            
-                            <div class="input-field">
-                                <input type="file" value="Choose file" id="photo" name="photo">
+                            <div class="input-field"><tr>
+                               <td>Poster</td><td>:</td> <td><input type="file" value="Choose file" id="photo" name="photo"></td></tr>
                             </div>
+                            </table>
 
                             <div class="input-field">
                                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Tambahkan" id="" name="tambah">

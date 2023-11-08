@@ -94,11 +94,11 @@ class C_ulasan{
     public function delete($id_ulasan){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM ulasan WHERE id_ulasan = '$id_ulasan'";
+        $sql = "DELETE FROM ulasan WHERE `ulasan`.`id_ulasan` = '$id_ulasan'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
-        header("Location:../views/V_barang.php");
+        header("Location:../views/V_barang_user.php");
 
     }
 

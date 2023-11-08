@@ -22,6 +22,7 @@ $review = new C_ulasan();
                     <div class="p-5">
                         <div class="text-center">
                             <h1 align = 'center' class="h4 text-gray-900 mb-4">Ekspresikan Pendapatmu</h1>
+                            <p>Note: Ada baiknya jika anda tonton dulu filmnya, supaya anda paham apa yang akan direview</p>
                         </div>
                             <hr>
                         <form align = 'center' action="../routers/R_ulasan.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">

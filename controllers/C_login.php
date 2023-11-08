@@ -9,13 +9,13 @@ class C_login {
 
 
     // -ini adalah fungsi atau method yang bernama registrasi user
-    public function register($id=0, $nama=null, $email=null, $pass=null, $role=null) {
+    public function register($id=0, $nama=null, $email=null, $pass=null, $role=null, $photo) {
         
         //membuat sebuah variable bertipe data objek
         $koneksi = new C_koneksi();
 
         //untuk menambahkan data objek dari kelas c_koneksi
-        $sql = "INSERT INTO user VALUES ('$id', '$nama', '$email','$pass' ,'$role', '')";
+        $sql = "INSERT INTO user VALUES ('$id', '$nama', '$email','$pass' ,'$role', '$photo')";
         //$sql2 = "INSERT INTO (id, nama, email, pass, role, photo) user VALUES ('$id', '$nama', '$email','$pass' ,'$role', '')";
         
         //mysqli_query=fungsi bawa an dari php

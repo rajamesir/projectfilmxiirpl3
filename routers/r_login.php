@@ -17,9 +17,39 @@ $login = new C_login();
         $pass = password_hash($pass, PASSWORD_DEFAULT);
         $role = $_POST['role'];
         
-         //memanggil method/fungsi register ke dalam r_login
-         $login->register($id, $nama, $email, $pass, $role);
+             //ekstensi yang diperbolehkan hanya jpg dan png
+     $ekstensi_diperbolehkan = array('png','jpg','jpeg');
+
+     $photo = $_FILES['photo_user']['name'];
+ 
+     $x = explode('.', $photo);
+
+     $ekstensi = strtolower(end($x));
+    //endapatkan ukurran 
+     $ukuran = $_FILES ['photo_user']['size'];
+
+    //untuk mendapatkan tempory file yang di uplod
+     $file_tmp = $_FILES['photo_user']['tmp_name']; 
+
+     //menegecek ekstensi yang di buat
+     if(in_array($ekstensi,$ekstensi_diperbolehkan) === true){
+
+        if( $ukuran < 1044070){
+            move_uploaded_file($file_tmp,'../assets/img/'. $photo);
+
+            // $query = $barang->tambah($id=0, $nama, $qty, $harga, $nama_photo);
+            $login->register($id, $nama, $email, $pass, $role, $photo);
+
+        }
+        else{
+            echo"EKSTENSI GAMBAR TERLALU BESAR";
+            
+        }
+     }else{
+        echo"EKSTENSI TIDAK DIPERBOLEHKAN";
+     }
     }
+
     elseif ($_GET['aksi'] == 'login') {
 
         $email = $_POST['email'];

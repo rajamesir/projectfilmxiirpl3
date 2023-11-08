@@ -37,7 +37,7 @@
                                 <h1 class="h4 text-gray-900 mb-4">Bikin Akun Yok!</h1>
                             </div>
 
-                            <form action="routers/r_login.php?aksi=register" method="POST" class="user">
+                            <form action="routers/r_login.php?aksi=register" method="POST" class="user" enctype="multipart/form-data">
 
                                 <!--untuk menampung inputan id user -->
                                 <div class="form-group">
@@ -66,6 +66,9 @@
                                     <input type="text" class="form-control form-control-user" id="role"
                                         value="user" name="role" hidden>
                                 </div>
+                                <div class="input-field">
+                                <input type="file" name="photo_user">
+                            </div>
                                
                                 <div class="input-field">
                                     <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" id="register" name="register">

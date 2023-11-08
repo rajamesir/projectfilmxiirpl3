@@ -43,7 +43,9 @@ $review = new C_ulasan();
         
                                         <tr>
                                             <td><?php echo $nomor++?></td>
-                                            <td><?= $b->nama_barang?></td>
+                                            <td align="center"><div style="display: flex ; justify-content: center; align-items: center;">
+                                                <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="100" height="160">
+                                        </div><br><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
                                             <td><?= $b->harga?></td>
                                             <td>
@@ -118,7 +120,7 @@ $review = new C_ulasan();
                                             <td align = 'center'><a href="V_edit_inventory.php?id=<?= $b->id_inventory ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>
-                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_barang.php?id=<?= $b->id_inventory ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
+                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_ulasan.php?id=<?= $r->id_ulasan ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>
