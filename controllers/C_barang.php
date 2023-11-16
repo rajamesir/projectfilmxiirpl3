@@ -23,13 +23,13 @@ class C_barang{
 
         $conn = new C_koneksi();
 
-        $sql = "INSERT INTO barang VALUES ($id, '$nama', $qty, '$harga', '$nama_photo')";
+        $sql = "INSERT INTO produk VALUES ($id, '$nama', '$qty', '$harga', '$nama_photo')";
         // var_dump($sql);
         $query = mysqli_query($conn->conn(), $sql);
         var_dump($sql);
         var_dump($query);
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/admin/V_barang.php'</script>";
             
         }else {
             echo "Selalu Gagal ";
@@ -85,7 +85,7 @@ class C_barang{
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/admin/V_barang.php'</script>";
 
         }else {
             echo "Dataa gagal diubah";
@@ -98,7 +98,7 @@ class C_barang{
 
         $query = mysqli_query($conn->conn(), $sql);
 
-        header("Location:../views/V_barang.php");
+        header("Location:../views/admin/V_barang.php");
 
     }
 

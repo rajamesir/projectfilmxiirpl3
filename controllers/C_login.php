@@ -70,7 +70,7 @@ class C_login {
                         $_SESSION["role"] = $data["role"];
 
                         // jika login berhasil dan rolenya sebagai admin maka akan berpindah kehalaman home 
-                        header("Location: ../views/home.php");
+                        header("Location: ../views/admin/home.php");
 
                         //untuk menghentikan proses di bawahnya
                         exit;
@@ -87,7 +87,7 @@ class C_login {
                         $_SESSION["role"] = $data["role"];
 
                         // jika login berhasil dan rolenya sebagai user maka akan berpindah kehalaman home 
-                        header("Location: ../views/home_user.php");
+                        header("Location: ../views/user/home_user.php");
 
                         //untuk menghentikan proses di bawahnya
                         exit;

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
    include_once 'C_koneksi.php';
 class C_ulasan{
 
@@ -10,6 +10,8 @@ class C_ulasan{
         $sql = "SELECT * FROM ulasan JOIN user ON ulasan.id_user = user.id JOIN produk ON ulasan.id_barang = produk.id ORDER BY id_ulasan DESC;";
 
         $query = mysqli_query($conn->conn(),$sql);
+
+        
 
         while ($q = mysqli_fetch_object($query)) {
 
@@ -29,7 +31,7 @@ class C_ulasan{
         
         // var_dump($sql);
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang_user.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/user/V_barang_user.php'</script>";
             
         }else {
             echo "Selalu Gagal $sql $query";
@@ -85,7 +87,7 @@ class C_ulasan{
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/user/V_barang.php'</script>";
 
         }else {
             echo "Dataa gagal diubah";
@@ -98,9 +100,22 @@ class C_ulasan{
 
         $query = mysqli_query($conn->conn(), $sql);
 
-        header("Location:../views/V_barang_user.php");
+        header("Location:../views/user/V_barang_user.php");
 
     }
+    public function tampil_user() {
+        $conn = new C_koneksi();
 
+        $sql ="SELECT * from ulasan inner join user on ulasan.id_user = user.id JOIN produk ON ulasan.id_barang = produk.id order by id_ulasan desc";
+
+        $query = mysqli_query($conn->conn(), $sql);
+
+        while ($q = mysqli_fetch_object($query)) {
+
+            $hasil[] = $q;
+        }
+
+        return $hasil;
+    }
 }
 ?>

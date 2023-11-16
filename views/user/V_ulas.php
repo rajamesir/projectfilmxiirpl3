@@ -1,12 +1,12 @@
 <?php
 //session_start();
 //modular memanggil file dari folder tampleate
-include_once 'template/header.php';
+include_once '../template/header.php';
 
-include_once 'template/topbar.php';
-include_once '../controllers/C_barang.php';
+include_once '../template/topbar.php';
+include_once '../../controllers/C_barang.php';
 $barang = new C_barang();
-include_once '../controllers/C_ulasan.php';
+include_once '../../controllers/C_ulasan.php';
 $review = new C_ulasan();
 ?>          
 
@@ -25,7 +25,7 @@ $review = new C_ulasan();
                             <p>Note: Ada baiknya jika anda tonton dulu filmnya, supaya anda paham apa yang akan direview</p>
                         </div>
                             <hr>
-                        <form align = 'center' action="../routers/R_ulasan.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">
+                        <form align = 'center' action="../../routers/R_ulasan.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">
 
                         <!--untuk menampung inputan id user -->
                             <?php foreach($barang->edit($_GET['id']) as $b){ ?>
@@ -37,7 +37,7 @@ $review = new C_ulasan();
                         
                             <!--untuk menampung nama dari user-->
                           <tr>
-                           <tr> <td>Film yang direview</td><td>:</td> <td align="center"><pre><img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="150" height="195"><br><?= $b->nama_barang?></pre>
+                           <tr> <td>Film yang direview</td><td>:</td> <td align="center"><pre><img src="<?= "../../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="150" height="195"><br><?= $b->nama_barang?></pre>
                                   <?php  } ?>
                                 </td>  </tr>
                           
