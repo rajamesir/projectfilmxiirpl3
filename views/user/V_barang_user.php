@@ -11,12 +11,13 @@ include_once '../../controllers/C_ulasan.php';
 $review = new C_ulasan();
 ?>              
             <div class = "row">
-
+                        
                         <div class="card-header py-3">
-                            <h5 class="m-0 font-weight-bold text-primary">Tabel Ulasan Anda</h6>
-                        </div>
+                            <h5 class="m-0 font-weight-bold text-primary">List Film</h6>
+                        </div><br>
+                        <div class = "col-lg-8">
                         <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable" width="50%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -64,6 +65,7 @@ $review = new C_ulasan();
                                 </table>
                             </div>
                         </div>
+                                        </div>
                         <br>
                         <hr>
                         <div class="card-header py-3">
@@ -98,13 +100,13 @@ $review = new C_ulasan();
 
                                         foreach ($review->tampil() as $r){
                                         
-                                        if ($r->id_user = $_SESSION['data']['id']) {
+                                        if ($_SESSION['data']['nama'] == $r->nama) {
 
                                         ?>
         
                                         <tr>
                                             <td align = "center"><?php echo $nomor++?></td>
-                                            <td align = "center"><img src="<?= "../../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="195"><br>
+                                            <td align = "center"><img src="<?= "../../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="240"><br>
                                                 <?= $r->nama_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
@@ -119,7 +121,7 @@ $review = new C_ulasan();
                                         </tr>
                                     
                                         <?php }else {
-                                            echo "cok";
+                                            echo "";
                                         }
                                         }
                                         } ?>

@@ -15,7 +15,7 @@ include_once '../template/topbar.php';
                     $_SESSION['data'] ['role']?>
                     </h1>
                     <br>
-                    <img class="img-profile rounded-circle" src="../assets/img/<?= 
+                    <img class="img-profile rounded-circle" src="../../assets/img/<?= 
                     $_SESSION['data'] ['photo_user']?>" alt="Belum Punya Photo Profil &#128542 &#9757" width="200" height="200">
                 </div>
                 <!-- /.container-fluid -->
