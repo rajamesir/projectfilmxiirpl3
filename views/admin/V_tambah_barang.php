@@ -2,9 +2,9 @@
 //session_start();
 //modular memanggil file dari folder tampleate
 $halaman = "Barang";
-include_once 'template/header.php';
-include_once 'template/sidebar.php';
-include_once 'template/topbar.php';
+include_once '../template/header.php';
+include_once '../template/sidebar.php';
+include_once '../template/topbar.php';
 ?>
 
 <body class="bg-gradient-primary">
@@ -24,7 +24,7 @@ include_once 'template/topbar.php';
                             <h1 class="h4 text-gray-900 mb-4">Tambahkan Barang Anda</h1>
                         </div>
 
-                        <form action="../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">
+                        <form action="../../routers/R_barang.php?aksi=tambah" method="POST" class="user" enctype ="multipart/form-data">
 
                         <!--untuk menampung inputan id user -->
                             <div class="form-group">
@@ -77,17 +77,17 @@ include_once 'template/topbar.php';
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../assets/js/sb-admin-2.min.js"></script>
+<script src="../../assets/js/sb-admin-2.min.js"></script>
 
 </body>
 
 <?php
-    include_once 'template/footer.php';
+    include_once '../template/footer.php';
 ?>

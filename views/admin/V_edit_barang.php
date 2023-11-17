@@ -1,11 +1,11 @@
 <?php
 //session_start();
 //modular memanggil file dari folder tampleate
-include_once 'template/header.php';
-include_once 'template/sidebar.php';
-include_once 'template/topbar.php';
+include_once '../template/header.php';
+include_once '../template/sidebar.php';
+include_once '../template/topbar.php';
 
-include_once '../controllers/C_barang.php';
+include_once '../../controllers/C_barang.php';
 
 $barang = new C_barang();
 ?>
@@ -23,7 +23,7 @@ $barang = new C_barang();
                             <h1 class="h4 text-gray-900 mb-4">Edit Barang</h1>
                         </div>
 
-                        <form action="../routers/R_barang.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
+                        <form action="../../routers/R_barang.php?aksi=update" method="POST" class="user" enctype ="multipart/form-data">
                             <?php foreach($barang->edit($_GET['id']) as $b){?>
                             <!--untuk menampung inputan id user -->
                             <div class="form-group">
@@ -78,17 +78,17 @@ $barang = new C_barang();
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="../assets/vendor/jquery/jquery.min.js"></script>
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jquery/jquery.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../../assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="../assets/js/sb-admin-2.min.js"></script>
+<script src="../../assets/js/sb-admin-2.min.js"></script>
 
 </body>
 
 <?php
-    include_once 'template/footer.php';
+    include_once '../template/footer.php';
 ?>

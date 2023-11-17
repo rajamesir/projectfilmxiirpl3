@@ -1,5 +1,5 @@
 <?php
-include_once '../controllers/C_barang.php';
+include_once '../../controllers/C_barang.php';
 
 $barang = new C_barang();
 ?>
@@ -32,7 +32,7 @@ $barang = new C_barang();
         <td><?= $b->harga ?></td>
         <td>
             <div style="display: flex; justify-content:center; align-items:center;">
-                <img src="<?= "../assets/img/".$b->photo ?>" alt="<?= $b->nama ?>" width="100" height="160">
+                <img src="<?= "../../assets/img/".$b->photo ?>" alt="<?= $b->nama ?>" width="100" height="160">
             </div>
         </td>
     </tr>

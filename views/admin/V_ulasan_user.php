@@ -2,12 +2,12 @@
 //session_start();
 //modular memanggil file dari folder tampleate
 $halaman = "Barang";
-include_once 'template/header.php';
-include_once 'template/sidebar.php';
-include_once 'template/topbar.php';
-include_once '../controllers/C_barang.php';
+include_once '../template/header.php';
+include_once '../template/sidebar.php';
+include_once '../template/topbar.php';
+include_once '../../controllers/C_barang.php';
 $barang = new C_barang();
-include_once '../controllers/C_ulasan.php';
+include_once '../../controllers/C_ulasan.php';
 $review = new C_ulasan();
 ?>              
 
@@ -73,5 +73,5 @@ $review = new C_ulasan();
 </script>
                                 <?php
                                 
-    include_once 'template/footer.php';
+    include_once '../template/footer.php';
 ?>
