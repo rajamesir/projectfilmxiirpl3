@@ -20,7 +20,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="../admin/home.php">
+                <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard Untuk admin</span></a>
             </li>
@@ -31,14 +31,14 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-             <a class="nav-link" href="../admin/V_barang.php">
+             <a class="nav-link" href="V_barang.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tabel untuk Admin</span></a>
                     
             </li>  
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="../admin/lapor.php">
+                <a class="nav-link" href="lapor.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Laporan</span></a>
             </li>
@@ -55,7 +55,7 @@
                     
             </li> 
             <li class="nav-item active">
-                <a class="nav-link" href="../admin/V_ulasan_user.php">
+                <a class="nav-link" href="V_ulasan_user.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Ulasan dari User</span></a>
                     
@@ -63,17 +63,17 @@
 
             <?php }elseif($_SESSION['data']['role'] == 'user') { ?>
             <li class="nav-item">
-                <a class="nav-link" href="../user/home_user.php">
+                <a class="nav-link" href="home_user.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard Untuk User</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../user/V_barang_user.php">
+                <a class="nav-link" href="V_barang_user.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tabel Untuk User</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="../user/V_userlain.php">
+                <a class="nav-link" href="V_userlain.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Ulasan Dari User</span></a>
             </li>

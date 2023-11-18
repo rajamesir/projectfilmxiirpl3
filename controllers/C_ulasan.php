@@ -31,7 +31,7 @@ class C_ulasan{
         
         // var_dump($sql);
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/user/V_barang_user.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang_user.php'</script>";
             
         }else {
             echo "Selalu Gagal $sql $query";
@@ -87,7 +87,7 @@ class C_ulasan{
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/user/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
 
         }else {
             echo "Dataa gagal diubah";
@@ -100,7 +100,7 @@ class C_ulasan{
 
         $query = mysqli_query($conn->conn(), $sql);
 
-        header("Location:../views/user/V_barang_user.php");
+        header("Location:../views/V_barang_user.php");
 
     }
     public function tampil_user() {

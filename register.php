@@ -66,9 +66,12 @@
                                     <input type="text" class="form-control form-control-user" id="role"
                                         value="user" name="role" hidden>
                                 </div>
-                                <div class="input-field">
-                                <input type="file" name="photo_user">
-                            </div>
+                                <tr>
+                                <td class="input-field">
+                                    Pilih Photo Profile
+                                </td>
+                            <td>:</td><td><input type="file" name="photo_user">
+                            </td></tr>
                                
                                 <div class="input-field">
                                     <input type="submit" class="btn btn-primary btn-user btn-block" value="Register Account" id="register" name="register">
