@@ -101,6 +101,22 @@ class C_barang{
         header("Location:../views/V_barang.php");
 
     }
+    public function tampil_film_review() {
+
+        $conn = new C_koneksi();
+ 
+         $sql = "SELECT * FROM produk JOIN ulasan ON ulasan.id_barang = produk.id WHERE id = '$id';";
+ 
+         $query = mysqli_query($conn->conn(),$sql);
+ 
+         while ($q = mysqli_fetch_object($query)) {
+ 
+             $hasil[] = $q;
+         }
+ 
+         return $hasil;
+     }
+ 
 
 }
 ?>

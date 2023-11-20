@@ -11,8 +11,6 @@ class C_ulasan{
 
         $query = mysqli_query($conn->conn(),$sql);
 
-        
-
         while ($q = mysqli_fetch_object($query)) {
 
             $hasil[] = $q;
@@ -70,11 +68,14 @@ class C_ulasan{
         $query = mysqli_query($conn->conn(), $sql);
 
         while ($q = mysqli_fetch_object($query)) {
-
+            
             $hasil[] = $q;
         }
-
-        return $hasil;
+        if (empty($hasil)) {
+            echo "Kosong";
+        }else {
+            return $hasil;
+        }
     }
 
     public function update ($id_ulasan, $id_barang, $id_user, $ulasan, $rating) {

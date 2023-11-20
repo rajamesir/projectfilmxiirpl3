@@ -9,69 +9,8 @@ include_once '../controllers/C_barang.php';
 $barang = new C_barang();
 include_once '../controllers/C_ulasan.php';
 $review = new C_ulasan();
-?>              
-            <div class = "row">
-                        
-                        <div class="card-header py-3">
-                            <h5 class="m-0 font-weight-bold text-primary">List Film</h6>
-                        </div><br>
-                        <div class = "col-lg-8">
-                        <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Qty</th>
-                                            <th>Harga</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-
-                                        <?php
-                                        $nomor = 1;
-
-                                        foreach ($barang->tampil() as $b){
-
-                                        ?>
-        
-                                        <tr>
-                                            <td><?php echo $nomor++?></td>
-                                            <td align="center"><div style="display: flex ; justify-content: center; align-items: center;">
-                                                <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="150" height="240">
-                                        </div><br><?= $b->nama_barang?></td>
-                                            <td><?= $b->qty?></td>
-                                            <td><?= $b->harga?></td>
-                                        <td align = 'center'><a href="V_ulas.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
-                                        <span class="text">Ulas</span>
-                                    </a>
-                                    <td align = 'center'><a href="V_ulasan_film.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
-                                        <span class="text">Lihat nih</span>
-                                    </a>
-</td>
-                                        </tr>
-                                    
-                                        <?php } ?>
-                                        
-                                    </tbody>
-                                    <tfoot>
-                                    <tr>
-                                            <th>No</th>
-                                            <th>Nama Barang</th>
-                                            <th>Qty</th>
-                                            <th>Harga</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
-                                        </div>
-                        <br>
-                        <hr>
-                        <div class="card-header py-3">
+?>    
+<div class="card-header py-3">
                             <h5 class="m-0 font-weight-bold text-primary">Tabel Ulasan Anda</h6>
                         </div>
                         <div class="table-responsive">
@@ -103,7 +42,7 @@ $review = new C_ulasan();
 
                                         foreach ($review->tampil() as $r){
                                         
-                                        if ($_SESSION['data']['nama'] == $r->nama) {
+                                        if ($barang->tampil_film_review($_GET['id'])) {
 
                                         ?>
         
