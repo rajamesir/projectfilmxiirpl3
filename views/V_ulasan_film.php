@@ -40,9 +40,9 @@ $review = new C_ulasan();
                                         } else {
                                         $nomor = 1;
 
-                                        foreach ($review->tampil() as $r){
+                                        foreach ($barang->tampil_film_review($_GET['id']) as $r){
                                         
-                                        if ($barang->tampil_film_review($_GET['id'])) {
+                                        
 
                                         ?>
         
@@ -62,11 +62,10 @@ $review = new C_ulasan();
                                 </td>
                                         </tr>
                                     
-                                        <?php }else {
-                                            echo "";
+                                        <?php
                                         }
                                         }
-                                        } ?>
+                                         ?>
                                         
                                     </tbody>
                                     <tfoot>
