@@ -1,4 +1,17 @@
-
+<?php
+// session_start();
+// error_reporting(E_ALL ^ E_NOTICE);
+include_once 'controllers/c_login.php';
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] == "admin ") {
+        header("location:views/home.php");
+    } else if ($_SESSION['role'] == "user") {
+        header("location:views/home_user.php");
+    } else {
+        echo '';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

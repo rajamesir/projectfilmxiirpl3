@@ -105,7 +105,7 @@ class C_barang{
 
         $conn = new C_koneksi();
  
-         $sql = "SELECT * FROM produk JOIN ulasan ON ulasan.id_barang = produk.id WHERE `id` = '$id';";
+         $sql = "SELECT * FROM produk JOIN ulasan ON ulasan.id_barang = produk.id JOIN user ON user.id = ulasan.id_user WHERE `id_barang` = '$id_barang'";
  
          $query = mysqli_query($conn->conn(),$sql);
  

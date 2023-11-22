@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include_once('validasi.php');
+
 if(!$_SESSION['data']['role']){   
     header("location: ../index.php");
 }

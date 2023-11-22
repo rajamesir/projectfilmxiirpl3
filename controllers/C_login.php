@@ -9,7 +9,7 @@ class C_login {
 
 
     // -ini adalah fungsi atau method yang bernama registrasi user
-    public function register($id=0, $nama=null, $email=null, $pass=null, $role=null, $photo) {
+    public function register($id=0, $nama=null, $email=null, $pass=null, $role=null, $photo=null) {
         
         //membuat sebuah variable bertipe data objek
         $koneksi = new C_koneksi();
