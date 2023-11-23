@@ -26,13 +26,12 @@ class C_barang{
         $sql = "INSERT INTO produk VALUES ($id, '$nama', '$qty', '$harga', '$nama_photo')";
         // var_dump($sql);
         $query = mysqli_query($conn->conn(), $sql);
-        var_dump($sql);
-        var_dump($query);
+
         if ($query) {
             echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
             
         }else {
-            echo "Selalu Gagal ";
+            echo "<script>alert('Data gagal ditambahkan ke tabel karena suatu kesalahan');window.location='../views/V_barang.php'</script>";
             
         }
 
@@ -85,10 +84,10 @@ class C_barang{
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Data berhasil diubah :D');window.location='../views/V_barang.php'</script>";
 
         }else {
-            echo "Dataa gagal diubah";
+            echo "<script>alert('Data gagal diubah');window.location='../views/V_barang.php'</script>";
         }
     }
     public function delete($id){

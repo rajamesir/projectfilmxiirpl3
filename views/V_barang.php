@@ -28,7 +28,7 @@ $barang = new C_barang();
                                             <th>No</th>
                                             <th>Film</th>
                                             <th>Tanggal Release</th>
-                                            <th>Harga</th>
+                                            <th>Sinopsis</th>
                                             <th>Photo</th>
                                             <th>Action</th>
                                         </tr>
@@ -48,7 +48,7 @@ $barang = new C_barang();
                                             <td><?php echo $nomor++?></td>
                                             <td align="center"><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
-                                            <td><a href="sinopsis/sinopsis.php"><?= $b->harga?></a></td>
+                                            <td><a href="sinopsis/sinopsis.php?id=<?= $b->id ?>" class="btn btn-primary btn-icon-split"> <span class="text"><?= $b->harga?></span></a></td>
                                             <td>
                                             <div style="display: flex ; justify-content: center; align-items: center;">
                                                 <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="100" height="160">
@@ -71,7 +71,7 @@ $barang = new C_barang();
                                             <th>No</th>
                                             <th>Nama Barang</th>
                                             <th>Tanggal Release</th>
-                                            <th>Harga</th>
+                                            <th>Sinopsis</th>
                                             <th>Photo</th>
                                             <th>Action</th>
                                         </tr>
