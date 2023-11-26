@@ -22,7 +22,7 @@ $review = new C_ulasan();
                                             <th>Ulasan</th>
                                             <th>Rating</th>
                                             <th>Diulas Oleh</th>
-                                            <th>Action</th>
+                                            
                                         </tr>
                                     </thead>
 
@@ -40,7 +40,7 @@ $review = new C_ulasan();
                                         } else {
                                         $nomor = 1;
 
-                                        foreach ($barang->tampil_film_review($_GET['id']) as $r){
+                                        foreach ($review->tampil_film($_GET['id']) as $r){
                                         
                                         
 
@@ -50,16 +50,11 @@ $review = new C_ulasan();
                                             <td align = "center"><?php echo $nomor++?></td>
                                             <td align = "center"><img src="<?= "../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="240"><br>
                                                 <?= $r->nama_barang ?></td>
+                                                <td align = "center" hidden><?= $r->id_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
                                             <td align = "center"><?= $r->nama ?></td>
-                                            <td align = 'center'><a href="V_edit_inventory.php?id=<?= $r->id_ulasan ?> "class="btn btn-primary btn-icon-split">
-                                        <span class="text">Edit</span>
-                                    </a>
-                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_ulasan.php?id=<?= $r->id_ulasan ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
+                                           
                                         </tr>
                                     
                                         <?php
@@ -75,7 +70,7 @@ $review = new C_ulasan();
                                             <th>Ulasan</th>
                                             <th>Rating</th>
                                             <th>Diulas Oleh</th>
-                                            <th>Action</th>
+                                            
                                         </tr>
                                     </tfoot>
                                 </table>

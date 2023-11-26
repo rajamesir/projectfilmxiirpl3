@@ -11,7 +11,7 @@ include_once '../controllers/C_ulasan.php';
 $review = new C_ulasan();
 ?>              
 <div class="card-header py-3">
-                            <h5 class="m-0 font-weight-bold text-primary">Tabel Ulasan Anda</h6>
+                            <h5 class="m-0 font-weight-bold text-primary">User lain juga mengulas</h6>
                         </div>
                         <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -22,7 +22,7 @@ $review = new C_ulasan();
                                             <th>Ulasan</th>
                                             <th>Rating</th>
                                             <th>Diulas Oleh</th>
-                                            <th>Action</th>
+                                            
                                         </tr>
                                     </thead>
 
@@ -32,7 +32,7 @@ $review = new C_ulasan();
 
                                         <tr>
                                             <td colspan = "8">
-                                                <h1 align="center">HAHHHH KOSOOONG</h1>
+                                                <h3 align="center">Belum ada yang mengulas</h3 >
                                             </td>
                                         </tr>
 
@@ -47,18 +47,11 @@ $review = new C_ulasan();
         
                                         <tr>
                                             <td align = "center"><?php echo $nomor++?></td>
-                                            <td align = "center"><img src="<?= "../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="195"><br>
+                                            <td align = "center"><img src="<?= "../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="225"><br>
                                                 <?= $r->nama_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
                                             <td align = "center"><?= $r->nama ?></td>
-                                            <td align = 'center'><a href="V_edit_inventory.php?id=<?= $r->id_ulasan ?> "class="btn btn-primary btn-icon-split">
-                                        <span class="text">Edit</span>
-                                    </a>
-                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_ulasan.php?id=<?= $r->id_ulasan ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
-                                        <span class="text">Hapus</span>
-                                    </a>
-                                </td>
                                         </tr>
                                     
                                         <?php }
@@ -72,7 +65,7 @@ $review = new C_ulasan();
                                             <th>Ulasan</th>
                                             <th>Rating</th>
                                             <th>Diulas Oleh</th>
-                                            <th>Action</th>
+                                            
                                         </tr>
                                     </tfoot>
                                 </table>

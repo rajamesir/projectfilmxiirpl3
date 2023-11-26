@@ -1,3 +1,11 @@
+<?php
+
+include_once '../../controllers/C_sinopsis.php';
+$sin = new C_sinopsis();
+
+include_once '../../controllers/C_barang.php';
+$barang = new C_barang();
+?>
 <html>
 
 <head>
@@ -31,13 +39,24 @@
 
     <main id="oma">
         <div id="content">
+            <?php 
+            if (empty($sin->tampil($_GET['id']))) {
+             ?>
+             <h1 class="card" align="center">Sinopsis belum tersedia</h1>
+             <?php   
+            }else{
+            foreach ($sin->tampil($_GET['id']) as $s) {
+                
+            
+             ?><p hidden><?= $s->id_sinopsis ?></p>
+             <p hidden><?= $s->id_barang ?></p>
 
             <article id="tutut" class="card">
             <center>
                 <h2>Pembukaan</h2>
                 <img src="geg.jpg" class="featured-image">
-                <p><strong>Despicable Me</strong> merupakan film animasi komputer 3D yang dirilis pada tahun 2010. Film ini diproduksi oleh Universal Pictures dan Illumination Entertainment serta disutradarai oleh sutradara keturunan Indonesia Pierre Coffin dan Chris Renaud. Despicable Me bergenre comedy-family. Film ini menghadirkan sosok anti-hero, Gru, seorang kriminal yang merupakan pencuri profesional. Selain itu juga ada 3 sosok anak-anak yang akan menemani hari-hari Gru. Namun sosok utama yang mencuri perhatian dalam film Despicable Me adalah minions, yaitu makhluk kecil kuning yang lucu dan menggemaskan. Kehadiran minions dalam film ini memang menghadirkan unsur komedi, dan menjadi daya tarik utama film ini.<br><br>
-                Film ini sukses menjadi salah satu film animasi terpopuler sejak perilisannya. Despicable Me juga berhasil meraup keuntungan besar secara box office di seluruh dunia. Hal ini mendorong dibuatkan sekuel, Despicable Me 2, di tahun 2013, yang melebihi kesuksesan pendahulunya. Sebuah spin-off film, Minions, akan dirilis pada tahun 2015, dan Despicable Me 3 akan dirilis pada tahun 2017.
+                <p><?= $s->pembukaan ?><br><br>
+                <?= $s->pembukaan_lagi ?>
 </p>
                 <a href="#oma">Balik Ke Atas</a>
               </center>
@@ -47,13 +66,10 @@
                 <h2>Sinopsis Film</h2>
                 <img src="tiis.jpg" class="featured-image">
 
-                <p>Film ini bercerita tentang Gru (Steve Carell), seorang penjahat kriminal yang ahli dalam pencurian. Ia memiliki rival bernama Vector (Jason Segel), yang baru saja berhasil mencuri Piramida Giza, yang membuat dunia gempar. Merasa tersaingi, Gru berencana untuk melakukan pencurian yang lebih besar, yaitu mencuri bulan. Namun untuk melakukannya, Gru terpaksa harus mengadopsi 3 orang anak perempuan yatim piatu, yaitu Margo (Miranda Cosgrove), Edith (Dana Gaier) dan Agnes (Elsie Fisher).<br>
+                <p><?= $s->sinopsis ?><br>
 
 <br><img src="minon.jpg" class="featured-image"><br>
-Untuk menjalankan aksinya, Gru memiliki sejumlah pasukan yang terdiri dari ratusan makhluk kuning kecil yang lucu, cekatan namun juga bertingkah konyol dan bodoh, disebut Minions. Kehadiran minions memang menjadi salah satu daya tarik utama film ini. Tingkah konyol mereka kerap mengundang gelak tawa.
-<br>
-Selain itu film ini juga menghadirkan unsur keluarga, dengan menghadirkan hubungan Gru dan 3 anak adopsinya. Tentunya film ini layak untuk ditonton karena menghadirkan aksi kocak dan bagus di tiap alur cerita yang ada.  
-                </p>
+<?= $s->sinopsis_lagi ?>                </p>
                 <a href="#oma">Balik Ke Atas</a>
                 </center>
             </article>
@@ -70,6 +86,10 @@ Selain itu film ini juga menghadirkan unsur keluarga, dengan menghadirkan hubung
               </center>
             </article>
         </div>
+        <?php
+    }
+}
+         ?>
 
             <aside class="aside-right">
                 <article class="profile card">

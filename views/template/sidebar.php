@@ -22,7 +22,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="home.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard Untuk admin</span></a>
+                    <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
@@ -33,7 +33,7 @@
             <li class="nav-item active">
              <a class="nav-link" href="V_barang.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tabel untuk Admin</span></a>
+                    <span>Tabel Film</span></a>
                     
             </li>  
             <hr class="sidebar-divider">
@@ -43,17 +43,7 @@
                     <span>Laporan</span></a>
             </li>
 
-            <!-- Divider -->
-            
 
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link" href="images (10).jpg">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Transaksi</span></a>
-                    
-            </li> 
             <li class="nav-item active">
                 <a class="nav-link" href="V_ulasan_user.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -65,17 +55,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="home_user.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard Untuk User</span></a>
+                    <span>Dashboard</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="V_barang_user.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Tabel Untuk User</span></a>
+                    <span>Tabel Film Kita</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="V_userlain.php">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Ulasan Dari User</span></a>
+                    <span>Ulasan User Lain</span></a>
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">

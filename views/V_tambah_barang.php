@@ -45,8 +45,8 @@ include_once 'template/topbar.php';
 
                             <!--untuk menampung password dari user-->
                             <div class="form-group"><tr>
-                            <td>Sinopsis</td><td>:</td>  <td><input type="text" id="harga"
-                                    value="Harga" name="harga"></td></tr>
+                              <td><input type="text" id="harga"
+                                    value="Lihat Sinopsis" name="harga" hidden></td></tr>
                             </div>
 
                             <!--untuk menampung nama dari user-->

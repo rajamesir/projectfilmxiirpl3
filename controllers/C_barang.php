@@ -15,8 +15,11 @@ class C_barang{
 
             $hasil[] = $q;
         }
-
+            if (empty($hasil)) {
+                echo "";
+            }else{
         return $hasil;
+    }
     }
 
     public function tambah_barang($id, $nama, $qty, $harga, $nama_photo){
@@ -100,22 +103,5 @@ class C_barang{
         header("Location:../views/V_barang.php");
 
     }
-    public function tampil_film_review() {
-
-        $conn = new C_koneksi();
- 
-         $sql = "SELECT * FROM produk JOIN ulasan ON ulasan.id_barang = produk.id JOIN user ON user.id = ulasan.id_user WHERE `id_barang` = '$id_barang'";
- 
-         $query = mysqli_query($conn->conn(),$sql);
- 
-         while ($q = mysqli_fetch_object($query)) {
- 
-             $hasil[] = $q;
-         }
- 
-         return $hasil;
-     }
- 
-
 }
 ?>

@@ -23,7 +23,7 @@ $review = new C_ulasan();
                                             <th>No</th>
                                             <th>Nama Barang</th>
                                             <th>Qty</th>
-                                            <th>Harga</th>
+                                            <th>Sinopsis</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -43,14 +43,13 @@ $review = new C_ulasan();
                                                 <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="150" height="240">
                                         </div><br><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
-                                            <td><?= $b->harga?></td>
-                                        <td align = 'center'><a href="V_ulas.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
+                                            <td><a href="sinopsis/sinopsis.php?id=<?= $b->id?>"><?= $b->harga?></a></td>
+                                        <td align = 'center'><a href="V_ulas.php?id=<?= $b->id ?> "class="btn btn-danger btn-icon-split">
                                         <span class="text">Ulas</span>
                                     </a>
-                                    <td align = 'center'><a href="V_ulasan_film.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
-                                        <span class="text">Lihat nih</span>
+                                    <a href="V_ulasan_film.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
+                                        <span class="text">Review User Lain</span>
                                     </a>
-</td>
                                         </tr>
                                     
                                         <?php } ?>
@@ -89,11 +88,11 @@ $review = new C_ulasan();
 
                                     <tbody>
                                         <?php
-                                        if (empty($review->tampil())) { ?>
+                                        if (empty($review->edit($_GET['id_ulasan']))) { ?>
 
                                         <tr>
                                             <td colspan = "8">
-                                                <h2 align="center">HAHHHH KOSOOONG</h1>
+                                                <h3 align="center">Anda belum mengulas. Ayo Review!</h3>
                                             </td>
                                         </tr>
 
@@ -114,10 +113,10 @@ $review = new C_ulasan();
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
                                             <td align = "center"><?= $r->nama ?></td>
-                                            <td align = 'center'><a href="V_edit_inventory.php?id=<?= $r->id_ulasan ?> "class="btn btn-primary btn-icon-split">
+                                            <td align = 'center'><a href="V_edit_ulasan.php?id=<?= $r->id_ulasan ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>
-                                    <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../routers/R_ulasan.php?id=<?= $r->id_ulasan ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
+                                    <a onclick="return confirm('Apakah anda yakin ingin menghapus ulasan anda?')" href="../routers/R_ulasan.php?id=<?= $r->id_ulasan ?>&aksi=hapus" class="btn btn-danger btn-icon-split">
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>

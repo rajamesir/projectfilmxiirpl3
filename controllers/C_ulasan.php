@@ -14,10 +14,13 @@ class C_ulasan{
         while ($q = mysqli_fetch_object($query)) {
 
             $hasil[] = $q;
-        }
+        }if (empty($hasil)) {
+            echo "";
+        }else{
 
         return $hasil;
     }
+}
 
     public function tambah_barang($id_ulasan, $id_barang, $id_user, $ulasan, $rating){
 
@@ -32,7 +35,7 @@ class C_ulasan{
             echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang_user.php'</script>";
             
         }else {
-            echo "Selalu Gagal $sql $query";
+            echo "<script>alert('Ada kesalahan. Coba lagi');window.location='../views/V_barang_user.php'</script>";
             
         }
 
@@ -63,7 +66,7 @@ class C_ulasan{
     public function edit($id_ulasan) {
         $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM ulasan WHERE id_ulasan = '$id_ulasan'";
+        $sql ="SELECT * FROM ulasan JOIN produk ON ulasan.id_barang = produk.id WHERE id_ulasan = '$id_ulasan'";
 
         $query = mysqli_query($conn->conn(), $sql);
 
@@ -88,16 +91,17 @@ class C_ulasan{
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Ulasan berhasil terupdate');window.location='../views/V_barang_user.php'</script>";
+            var_dump($sql);
 
         }else {
-            echo "Dataa gagal diubah";
+            echo "<script>alert('Dataa gagal diubah');window.location='../views/V_barang_user.php'</script>";
         }
     }
     public function delete($id_ulasan){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM ulasan WHERE `ulasan`.`id_ulasan` = '$id_ulasan'";
+        $sql = "DELETE FROM ulasan WHERE id_ulasan = $id_ulasan;";
 
         $query = mysqli_query($conn->conn(), $sql);
 
@@ -117,6 +121,23 @@ class C_ulasan{
         }
 
         return $hasil;
+    }
+    public function tampil_film($id_barang) {
+        $conn = new C_koneksi();
+
+        $sql ="SELECT * FROM ulasan JOIN user ON ulasan.id_user = user.id JOIN produk ON ulasan.id_barang = produk.id WHERE id_barang = '$id_barang';";
+
+        $query = mysqli_query($conn->conn(), $sql);
+
+        while ($q = mysqli_fetch_object($query)) {
+            
+            $hasil[] = $q;
+        }
+        if (empty($hasil)) {
+            echo "Kosong";
+        }else {
+            return $hasil;
+        }
     }
 }
 ?>

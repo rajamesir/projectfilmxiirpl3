@@ -47,7 +47,7 @@ $review = new C_ulasan();
         
                                         <tr>
                                             <td align = "center"><?php echo $nomor++?></td>
-                                            <td align = "center"><img src="<?= "../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="195"><br>
+                                            <td align = "center"><img src="<?= "../assets/img/" . $r->photo;?>" alt="<?= $r->nama_barang?>" width="150" height="225"><br>
                                                 <?= $r->nama_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
@@ -69,9 +69,13 @@ $review = new C_ulasan();
                                     </tfoot>
                                 </table>
                                 <script>
-    window.print();
-</script>
-                                <?php
+                                    function myFunction(){
+                                        window.print;
+                                    }
+                                </script>
+                                <h1 align="center"><a href="#" onclick="myFunction(); return false;">Print Kang</a> </h1>
+                                
+<?php
                                 
     include_once 'template/footer.php';
 ?>

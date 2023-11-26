@@ -37,6 +37,17 @@ $barang = new C_barang();
                                     <tbody>
 
                                         <?php
+                                        if (empty($barang->tampil())) {
+                                        ?>
+                                        <tr>
+                                            <td style=" border: none;"><td style=" border: none;">
+                                                <p></p>
+                                            </td><td align="right" style=" border: none;">
+                                                <p>Film Belum Tersedia</p>
+                                            </td></td>
+                                        </tr>
+                                        <?php    
+                                        }else{
                                         $nomor = 1;
 
                                         foreach ($barang->tampil() as $b){
@@ -63,7 +74,7 @@ $barang = new C_barang();
                                 </td>
                                         </tr>
                                     
-                                        <?php } ?>
+                                        <?php } } ?>
                                         
                                     </tbody>
                                     <tfoot>
