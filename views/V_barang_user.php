@@ -88,7 +88,7 @@ $review = new C_ulasan();
 
                                     <tbody>
                                         <?php
-                                        if (empty($review->edit($_GET['id_ulasan']))) { ?>
+                                        if (empty($review->tampil())) { ?>
 
                                         <tr>
                                             <td colspan = "8">

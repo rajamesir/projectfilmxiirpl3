@@ -22,16 +22,16 @@ class C_sinopsis{
     }
     }
 
-    public function tambah_barang($id, $nama, $qty, $harga, $nama_photo){
+    public function tambah_barang($id_sinopsis, $id_barang, $pembukaan, $pembukaan_lagi, $gambar, $gambar_lagi, $sinopsis, $sinopsis_lagi, $poster){
 
         $conn = new C_koneksi();
 
-        $sql = "INSERT INTO produk VALUES ($id, '$nama', '$qty', '$harga', '$nama_photo')";
+        $sql = "INSERT INTO sinopsis VALUES ($id_sinopsis, $id_barang, '$pembukaan', '$pembukaan_lagi', '$gambar', '$gambar_lagi', '$sinopsis', '$sinopsis_lagi', '$poster')";
         // var_dump($sql);
         $query = mysqli_query($conn->conn(), $sql);
 
         if ($query) {
-            echo "<script>alert('Data berhasil ditambahkan ke tabel');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Sinopsis berhasil ditambahkan');window.location='../views/V_barang.php'</script>";
             
         }else {
             echo "<script>alert('Data gagal ditambahkan ke tabel karena suatu kesalahan');window.location='../views/V_barang.php'</script>";
@@ -62,41 +62,27 @@ class C_sinopsis{
     //     }
     // }
 
-    public function edit($id) {
-        $conn = new C_koneksi();
 
-        $sql ="SELECT * FROM produk WHERE id = '$id'";
-
-        $query = mysqli_query($conn->conn(), $sql);
-
-        while ($q = mysqli_fetch_object($query)) {
-
-            $hasil[] = $q;
-        }
-
-        return $hasil;
-    }
-
-    public function update ($id, $nama, $qty, $harga, $nama_photo) {
+    public function update ($id_sinopsis, $id_barang, $pembukaan, $pembukaan_lagi, $gambar, $gambar_lagi, $sinopsis, $sinopsis_lagi, $poster) {
 
         $conn = new C_koneksi();
 
-        $sql = "UPDATE `produk` SET `nama_barang` = '$nama', `qty` = '$qty', `harga` = '$harga', `photo` = '$nama_photo' WHERE `id` = '$id'";
+        $sql = "UPDATE `sinopsis` SET `id_barang` = '$id_barang', `pembukaan` = '$pembukaan', `pembukaan_lagi` = '$pembukaan_lagi', `gambar` = '$gambar', `gambar_lagi` = '$gambar_lagi', `sinopsis` = '$sinopsis', `sinopsis_lagi` = '$sinopsis_lagi', `poster` = '$poster' WHERE `id_sinopsis` = '$id_sinopsis'";
 
         $query = mysqli_query($conn->conn(), $sql);
         
 
         if ($query) {
-            echo "<script>alert('Data berhasil diubah :D');window.location='../views/V_barang.php'</script>";
+            echo "<script>alert('Sinopsis berhasil diubah :D');window.location='../views/sinopsis/sinopsis.php'</script>";
 
         }else {
             echo "<script>alert('Data gagal diubah');window.location='../views/V_barang.php'</script>";
         }
     }
-    public function delete($id){
+    public function delete($id_sinopsis){
         $conn = new C_koneksi();
         
-        $sql = "DELETE FROM produk WHERE id = '$id'";
+        $sql = "DELETE FROM sinopsis WHERE id_sinopsis = '$id_sinopsis'";
 
         $query = mysqli_query($conn->conn(), $sql);
 

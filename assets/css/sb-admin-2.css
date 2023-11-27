@@ -1769,7 +1769,7 @@ pre code {
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;
-    width: 100%;
+    width: 120%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1781,7 +1781,7 @@ pre code {
 @media (max-width: 767.98px) {
   .table-responsive-md {
     display: block;
-    width: 100%;
+    width: 120%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1793,7 +1793,7 @@ pre code {
 @media (max-width: 991.98px) {
   .table-responsive-lg {
     display: block;
-    width: 100%;
+    width: 120%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1805,7 +1805,7 @@ pre code {
 @media (max-width: 1199.98px) {
   .table-responsive-xl {
     display: block;
-    width: 100%;
+    width: 120%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1816,7 +1816,7 @@ pre code {
 
 .table-responsive {
   display: block;
-  width: 100%;
+  width: 120%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }

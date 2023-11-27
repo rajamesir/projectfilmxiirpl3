@@ -10,11 +10,12 @@ $barang = new C_barang();
 
 ?>              
             <div class = "row">
-                <div class = "col-lg-2"></div>
-                <div class = "col-lg-8">
+                <div class = "col-lg-1"></div>
+                <div class = "col-lg-10">
                 <a href="V_tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                         <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
-                                    </a>          
+                                    </a> 
+                                             
                 <!-- /.container-fluid -->
                 <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -31,6 +32,7 @@ $barang = new C_barang();
                                             <th>Sinopsis</th>
                                             <th>Photo</th>
                                             <th>Action</th>
+                                            <th>            </th>
                                         </tr>
                                     </thead>
 
@@ -72,6 +74,9 @@ $barang = new C_barang();
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>
+                                <td><a href="V_tambah_sinopsis.php?id=<?= $b->id ?>" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
+                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Sinopsis</span>
+                                    </a> </td>
                                         </tr>
                                     
                                         <?php } } ?>
@@ -85,6 +90,7 @@ $barang = new C_barang();
                                             <th>Sinopsis</th>
                                             <th>Photo</th>
                                             <th>Action</th>
+                                            <th>            </th>
                                         </tr>
                                     </tfoot>
                                 </table>

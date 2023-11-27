@@ -27,15 +27,16 @@ $review = new C_ulasan();
                                     </thead>
 
                                     <tbody>
-                                        <?php
+                                    <?php
                                         if (empty($review->tampil())) { ?>
 
                                         <tr>
                                             <td colspan = "8">
-                                                <h2 align="center">HAHHHH KOSOOONG</h1>
+                                                <h3 align="center">Anda belum mengulas. Ayo Review!</h3>
                                             </td>
                                         </tr>
 
+                
                                         <?php
                                         } else {
                                         $nomor = 1;
