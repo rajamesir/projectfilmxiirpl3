@@ -1,8 +1,7 @@
 <?php
-
+session_start();
 include_once '../../controllers/C_sinopsis.php';
 $sin = new C_sinopsis();
-
 include_once '../../controllers/C_barang.php';
 $barang = new C_barang();
 ?>
@@ -30,7 +29,6 @@ $barang = new C_barang();
                     <li><a href="https://lk21official.art/despicable-me-2010/">Tonton Filmnya Disini!</a></li>
                     <li><a href="#tutut">Pembukaan</a></li>
                     <li><a href="#maot">Sinopsis</a></li>
-                    <li><a href="#hehe">Character</a></li>
                     <li><a href="#hehehehaw">Penutup</a></li>
                 </ul>
             </div>
@@ -42,7 +40,10 @@ $barang = new C_barang();
             <?php 
             if (empty($sin->tampil($_GET['id']))) {
              ?>
-             <h1 class="card" align="center">Sinopsis belum tersedia</h1>
+             <h1 align="center">Sinopsis belum tersedia</h1>
+             <h2>Merasa bosan? Sini, dengarkan lagu ini dulu<br><audio controls autoplay loop>
+    <source src="../../assets/img/AUD-20231103-WA0003.mp3" type="audio/mpeg">
+</audio></h2>
              <?php   
             }else{
             foreach ($sin->tampil($_GET['id']) as $s) {
@@ -54,23 +55,22 @@ $barang = new C_barang();
             <article id="tutut" class="card">
             <center>
                 <h2>Pembukaan</h2>
-                <img src="geg.jpg" class="featured-image">
+                <img src="<?="../../assets/img/" . $s->poster ?>" class="featured-image">
                 <p><?= $s->pembukaan ?><br><br>
                 <?= $s->pembukaan_lagi ?>
 </p>
-                <a href="#oma">Balik Ke Atas</a>
               </center>
             </article>
             <article id="maot" class="card">
             <center>
                 <h2>Sinopsis Film</h2>
-                <img src="tiis.jpg" class="featured-image">
+                <img src="<?="../../assets/img/" . $s->gambar ?>" class="featured-image">
 
                 <p><?= $s->sinopsis ?><br>
 
-<br><img src="minon.jpg" class="featured-image"><br>
+<br><img src="<?="../../assets/img/" . $s->gambar_lagi ?>" class="featured-image"><br>
 <?= $s->sinopsis_lagi ?>                </p>
-                <a href="#oma">Balik Ke Atas</a>
+                
                 </center>
             </article>
 
@@ -81,21 +81,30 @@ $barang = new C_barang();
             <center>
                 <h2>Penutup</h2>
                 <p>Nah, itulah review saya untuk film satu ini. Kemungkinan Anda pernah membaca atau mendengar review seperti ini, tapi percayalah, review ini dari sudut pandang saya dan <em>research</em> saya &#128077;. Demikian review saya kali ini. Mohon maaf bila ada kesalahan kata. Wassalamualaikum warohmatullahi wabarokatuh.</p>
-                <a href="#oma">Balik Ke Atas</a> <br>
-                <a href="komedi.html">Kembali ke menu utama</a>
+                <br><?php if ($_SESSION['data']['role'] == 'admin') {
+    ?>
+     <a onclick="return confirm('Apakah anda yakin data mau dihapus?')" href="../../routers/R_sinopsis.php?id=<?=$s->id_sinopsis?>&aksi=hapus" class="btn btn-danger btn-icon-split">
+                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Hapus Sinopsis</span>
+                                    </a><br><a href="../V_barang.php"class="btn btn-primary btn-icon-split">Kembali ke tabel</a><?php }else { ?>
+                <a href="../V_barang_user.php"class="btn btn-primary btn-icon-split">Kembali</a><?php }
+                ?>
               </center>
             </article>
         </div>
-        <?php
+        
+                                <?php }
     }
-}
-         ?>
 
+         
+            if (!empty($sin->tampil($_GET['id']))) {
+                
+        ?>
+             
             <aside class="aside-right">
                 <article class="profile card">
                     
                     <header>
-                        <h2>DETAIL</h2>
+                        <h2>ETAIL</h2>
 
                         
                         <figure>
@@ -146,11 +155,11 @@ Universal Pictures, Illumination Entertainment
                     </section>
                 </article>
             </aside>
+<?php
 
+}?>
     </main>
-<audio controls autoplay loop>
-    <source src="y2mate.com - Despicable Me Happy Gru OST Introduction scene.mp3" type="audio/mpeg">
-</audio>
+
     <footer>
         <marquee direction=left>Copyright goes to >----> XIRPL3-32 Wirakupling69</marquee>
     </footer>

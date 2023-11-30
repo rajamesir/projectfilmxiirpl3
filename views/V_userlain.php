@@ -51,7 +51,7 @@ $review = new C_ulasan();
                                                 <?= $r->nama_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
-                                            <td align = "center"><?= $r->nama ?></td>
+                                            <td align = "center"><img class="img-profile rounded-circle" src="../assets/img/<?=$r->photo_user ?>" width = "40"><?= $r->nama ?></td>
                                         </tr>
                                     
                                         <?php }
@@ -70,7 +70,7 @@ $review = new C_ulasan();
                                     </tfoot>
                                 </table>
                                 <hr>
-                                <h4 align = "center"><a href="V_pemilik.php">Pemilik</a> | <a href="../index.php">Home</a></h4>
+
                             </div>
 <?php
     include_once 'template/footer.php';

@@ -43,11 +43,11 @@ $review = new C_ulasan();
                                                 <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="150" height="240">
                                         </div><br><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
-                                            <td><a href="sinopsis/sinopsis.php?id=<?= $b->id?>"><?= $b->harga?></a></td>
-                                        <td align = 'center'><a href="V_ulas.php?id=<?= $b->id ?> "class="btn btn-danger btn-icon-split">
+                                            <td><a href="sinopsis/sinopsis.php?id=<?= $b->id ?>" class="btn btn-success btn-icon-split"> <span class="text"><?= $b->harga?></span></a></td>
+                                        <td align = 'center'><a href="V_ulas.php?id=<?= $b->id ?> "class="btn btn-info btn-icon-split">
                                         <span class="text">Ulas</span>
                                     </a>
-                                    <a href="V_ulasan_film.php?id=<?= $b->id ?> "class="btn btn-primary btn-icon-split">
+                                    <a href="V_ulasan_film.php?id=<?= $b->id ?> "class="btn btn-warning btn-icon-split">
                                         <span class="text">Review User Lain</span>
                                     </a>
                                         </tr>
@@ -112,7 +112,7 @@ $review = new C_ulasan();
                                                 <?= $r->nama_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
-                                            <td align = "center"><?= $r->nama ?></td>
+                                            <td align = "center"><img class="img-profile rounded-circle" src="../assets/img/<?=$r->photo_user ?>" width = "40"><?= $r->nama ?></td>
                                             <td align = 'center'><a href="V_edit_ulasan.php?id=<?= $r->id_ulasan ?> "class="btn btn-primary btn-icon-split">
                                         <span class="text">Edit</span>
                                     </a>

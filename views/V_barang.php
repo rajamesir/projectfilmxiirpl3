@@ -10,10 +10,10 @@ $barang = new C_barang();
 
 ?>              
             <div class = "row">
-                <div class = "col-lg-1"></div>
-                <div class = "col-lg-10">
+                <div class = "col-lg-2"></div>
+                <div class = "col-lg-9">
                 <a href="V_tambah_barang.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Data</span>
+                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Film</span>
                                     </a> 
                                              
                 <!-- /.container-fluid -->
@@ -32,7 +32,6 @@ $barang = new C_barang();
                                             <th>Sinopsis</th>
                                             <th>Photo</th>
                                             <th>Action</th>
-                                            <th>            </th>
                                         </tr>
                                     </thead>
 
@@ -61,7 +60,11 @@ $barang = new C_barang();
                                             <td><?php echo $nomor++?></td>
                                             <td align="center"><?= $b->nama_barang?></td>
                                             <td><?= $b->qty?></td>
-                                            <td><a href="sinopsis/sinopsis.php?id=<?= $b->id ?>" class="btn btn-primary btn-icon-split"> <span class="text"><?= $b->harga?></span></a></td>
+                                            <td><a href="sinopsis/sinopsis.php?id=<?= $b->id ?>" class="btn btn-success btn-icon-split"> <span class="text"><?= $b->harga?></span></a>
+                                                <a href="V_tambah_sinopsis.php?id=<?= $b->id ?>" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm">
+                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Sinopsis</span>
+                                    </a> 
+                                            </td>
                                             <td>
                                             <div style="display: flex ; justify-content: center; align-items: center;">
                                                 <img src="<?= "../assets/img/" . $b->photo;?>" alt="<?= $b->nama_barang?>" width="100" height="160">
@@ -74,9 +77,7 @@ $barang = new C_barang();
                                         <span class="text">Hapus</span>
                                     </a>
                                 </td>
-                                <td><a href="V_tambah_sinopsis.php?id=<?= $b->id ?>" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">
-                                        <span class="text"><i class = "fas fa-plus fa-sm text-white-50"></i></span><span>Tambah Sinopsis</span>
-                                    </a> </td>
+                                
                                         </tr>
                                     
                                         <?php } } ?>
@@ -90,7 +91,6 @@ $barang = new C_barang();
                                             <th>Sinopsis</th>
                                             <th>Photo</th>
                                             <th>Action</th>
-                                            <th>            </th>
                                         </tr>
                                     </tfoot>
                                 </table>

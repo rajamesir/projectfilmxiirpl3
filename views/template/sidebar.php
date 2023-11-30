@@ -37,13 +37,6 @@
                     
             </li>  
             <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link" href="lapor.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Laporan</span></a>
-            </li>
-
-
             <li class="nav-item active">
                 <a class="nav-link" href="V_ulasan_user.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -69,7 +62,7 @@
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="contact.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Contact</span></a>
             </li>

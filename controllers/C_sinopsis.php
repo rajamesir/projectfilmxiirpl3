@@ -29,12 +29,13 @@ class C_sinopsis{
         $sql = "INSERT INTO sinopsis VALUES ($id_sinopsis, $id_barang, '$pembukaan', '$pembukaan_lagi', '$gambar', '$gambar_lagi', '$sinopsis', '$sinopsis_lagi', '$poster')";
         // var_dump($sql);
         $query = mysqli_query($conn->conn(), $sql);
+        var_dump($sql);
 
         if ($query) {
             echo "<script>alert('Sinopsis berhasil ditambahkan');window.location='../views/V_barang.php'</script>";
             
         }else {
-            echo "<script>alert('Data gagal ditambahkan ke tabel karena suatu kesalahan');window.location='../views/V_barang.php'</script>";
+            echo "Ajirlah";
             
         }
 

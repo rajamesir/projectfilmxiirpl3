@@ -7,8 +7,65 @@ if ($_GET['aksi'] == 'tambah') {
     $id_barang = $_POST['id_barang'];
     $pembukaan = $_POST['pembukaan'];
     $pembukaan_lagi = $_POST['pembukaan_lagi'];
-    $gambar = $_POST['gambar'];
-    $gambar_lagi = $_POST['gambar_lagi'];
+    //ekstensi yang diperbolehkan hanya jpg dan png
+     $ekstensi_boleh = array('png','jpg','jpeg');
+
+     $gambar = $_FILES['gambar']['name'];
+ 
+     $y = explode('.', $gambar);
+
+     $extend = strtolower(end($y));
+    //endapatkan ukurran 
+     $size = $_FILES ['gambar']['size'];
+
+    //untuk mendapatkan tempory file yang di uplod
+     $file_tempe = $_FILES['gambar']['tmp_name']; 
+
+     //menegecek ekstensi yang di buat
+     if(in_array($extend,$ekstensi_boleh) === true){
+
+        if( $size < 1044070){
+            move_uploaded_file($file_tempe,'../assets/img/'. $gambar);
+
+            echo "Kerja bagus";
+
+        }
+        else{
+            echo"EKSTENSI GAMBAR TERLALU BESAR";
+            
+        }
+     }else{
+        echo"EKSTENSI TIDAK DIPERBOLEHKAN";
+     }
+    $boleh = array('png','jpg','jpeg');
+
+     $gambar_lagi = $_FILES['gambar_lagi']['name'];
+ 
+     $z = explode('.', $gambar);
+
+     $extended = strtolower(end($z));
+    //endapatkan ukurran 
+     $badag = $_FILES ['gambar_lagi']['size'];
+
+    //untuk mendapatkan tempory file yang di uplod
+     $file_tahu = $_FILES['gambar_lagi']['tmp_name']; 
+
+     //menegecek ekstensi yang di buat
+     if(in_array($extended,$boleh) === true){
+
+        if( $badag < 1044070){
+            move_uploaded_file($file_tahu,'../assets/img/'. $gambar_lagi);
+
+            echo "Kerja bagus lagi";
+
+        }
+        else{
+            echo"EKSTENSI GAMBAR TERLALU BESAR";
+            
+        }
+     }else{
+        echo"EKSTENSI TIDAK DIPERBOLEHKAN";
+     }
     $sinopsis = $_POST['sinopsis'];
     $sinopsis_lagi = $_POST['sinopsis_lagi'];
 
@@ -33,7 +90,7 @@ if ($_GET['aksi'] == 'tambah') {
             move_uploaded_file($file_tmp,'../assets/img/'. $poster);
 
             // $query = $barang->tambah($id=0, $nama, $qty, $harga, $nama_photo);
-            $barang->tambah_barang($id_sinopsis, $id_barang, $pembukaan, $pembukaan_lagi, $gambar, $gambar_lagi, $sinopsis, $sinopsis_lagi, $poster);
+            $barang->tambah_barang($id_sinopsis = 0, $id_barang, $pembukaan, $pembukaan_lagi, $gambar, $gambar_lagi, $sinopsis, $sinopsis_lagi, $poster);
 
         }
         else{
@@ -93,7 +150,7 @@ if ($_GET['aksi'] == 'tambah') {
 
    
 }elseif ($_GET['aksi'] == 'hapus') {
-    $id_sinopsis = $_GET['id_sinopsis'];
+    $id_sinopsis = $_GET['id'];
 
     $barang->delete($id_sinopsis);
 }

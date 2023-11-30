@@ -51,8 +51,7 @@ $review = new C_ulasan();
                                                 <?= $r->nama_barang ?></td>
                                             <td align = "center"><?= $r->ulasan ?></td>
                                             <td align = "center"><?= $r->rating ?></td>
-                                            <td align = "center"><?= $r->nama ?></td>
-                                        </tr>
+                                            <td align = "center"><img class="img-profile rounded-circle" src="../assets/img/<?=$r->photo_user ?>" width = "40"><?= $r->nama ?></td>                                        </tr>
                                     
                                         <?php }
                                         } ?>
@@ -74,7 +73,9 @@ $review = new C_ulasan();
                                     }
                                 </script>
                                 <h1 align="center"><a href="#" onclick="myFunction(); return false;">Print Kang</a> </h1>
-                                
+           <script>
+    window.print();
+</script>                     
 <?php
                                 
     include_once 'template/footer.php';

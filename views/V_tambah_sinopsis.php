@@ -49,13 +49,13 @@ $sin = new C_barang;
                                 </td>  </tr>
                         
                             <div class="form-group"><tr>
-                               <td>Tanggal Release</td><td>:</td> <td><input type="text"
-                                    placeholder="Pembukaan 1" name="pembukaan"></td></tr>
+                               <td>Pembukaan</td><td>:</td> <td><textarea class="form-control form-control-user" type="text"
+                                    placeholder="Paragraf 1" name="pembukaan"></textarea></td></tr>
                             </div>
 
                             <!--untuk menampung password dari user-->
-                            <div class="form-group"><tr><td>Tanggal Release</td><td>:</td>
-                              <td><input type="text" placeholder="Pembukaan 2" name="pembukaan_lagi"></td></tr>
+                            <div class="form-group"><tr><td></td><td></td>
+                              <td><textarea class="form-control form-control-user" type="text" placeholder="Paragraf 2" name="pembukaan_lagi"></textarea></td></tr>
                             </div>
 
                             <!--untuk menampung nama dari user-->
@@ -65,22 +65,22 @@ $sin = new C_barang;
                             </div> -->
                            
                             <div class="input-field"><tr>
-                               <td>Gambar 1</td><td>:</td> <td><input type="file" value="Choose file" id="photo" name="gambar"></td></tr>
+                               <td>Gambar 1</td><td>:</td> <td><input class="form-control form-control-user" type="file" value="Choose file" id="photo" name="gambar"></td></tr>
                             </div>
                             <div class="input-field"><tr>
-                               <td>Gambar 2</td><td>:</td> <td><input type="file" value="Choose file" id="photo" name="gambar_lagi"></td></tr>
+                               <td>Gambar 2</td><td>:</td> <td><input class="form-control form-control-user" type="file" value="Choose file" id="photo" name="gambar_lagi"></td></tr>
                             </div>
                             <div class="form-group"><tr>
-                               <td>Tanggal Release</td><td>:</td> <td><input type="text"
-                                    placeholder="Sinopsis 1" name="sinopsis"></td></tr>
+                               <td>Sinopsis</td><td>:</td> <td><textarea class="form-control form-control-user" type="text"
+                                    placeholder="Paragraf 1" name="sinopsis"></textarea></td></tr>
                             </div>
 
                             <!--untuk menampung password dari user-->
-                            <div class="form-group"><tr><td>Tanggal Release</td><td>:</td>
-                              <td><input type="text" placeholder="Sinopsis 2" name="sinopsis_lagi"></td></tr>
+                            <div class="form-group"><tr><td></td><td></td>
+                              <td><textarea class="form-control form-control-user" type="text" placeholder="Paragraf 2" name="sinopsis_lagi"></textarea></td></tr>
                             </div>
                             <div class="input-field"><tr>
-                               <td>Poster</td><td>:</td> <td><input type="file" value="Choose file" id="photo" name="poster"></td></tr>
+                               <td>Poster</td><td>:</td> <td><input class="form-control form-control-user" type="file" value="Choose file" id="photo" name="poster"></td></tr>
                             </div>
                             </table>
 

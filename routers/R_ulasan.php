@@ -27,7 +27,7 @@ if ($_GET['aksi'] == 'tambah') {
 
 
 }elseif ($_GET['aksi'] == 'hapus') {
-    $id_ulasan = $_GET['id_ulasan'];
+    $id_ulasan = $_GET['id'];
 
     $review->delete($id_ulasan);
 }

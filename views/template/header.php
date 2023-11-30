@@ -33,5 +33,12 @@ if(!$_SESSION['data']['role']){
 
     <!-- Custom styles for this page -->
     <link href="../assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link id="changeable-colors" rel="stylesheet" href="../assets/css/colors/orange.css"
+    <script src="js/modernizer.js"></script>
 
 </head>
