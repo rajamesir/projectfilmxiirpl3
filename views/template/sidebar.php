@@ -66,11 +66,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Contact</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="V_barang.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>About</span></a>
-            </li>
+            
 
             <?php } ?>
             <!-- Divider -->

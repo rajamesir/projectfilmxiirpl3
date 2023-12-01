@@ -106,13 +106,12 @@ div.polaroid{
 .jumbotron{
    padding: 20px;
    background-color:#ffffff;
-   background-image: url(popo.jpeg);
+   background-image: url(popo.jpg);
    background-repeat: no-repeat;
    background-position: center;
    background-size: 100%;
    text-align: center;
    font-size: 25px;
-   color: red;
 
 }
 

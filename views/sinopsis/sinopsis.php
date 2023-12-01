@@ -19,8 +19,8 @@ $barang = new C_barang();
 
     <header>
         <div class="jumbotron">
-            <h1> Review Film 69 </h1>
-            <p>Review Paling Akurat Sepanjang Masa</p>
+            <h1> Base03 RPL </h1>
+            <p>Web film Paling Akurat Sepanjang Masa</p>
         </div>
 
         <nav>
@@ -104,12 +104,12 @@ $barang = new C_barang();
                 <article class="profile card">
                     
                     <header>
-                        <h2>ETAIL</h2>
+                        <h2>DETAIL WEB</h2>
 
                         
                         <figure>
                         <center>
-                            <img src="kaka.jpg" class="profile img">
+                            <img src="../../assets/img/2.png" class="profile img">
                             <figcaption></figcaption>
                             <br>
                             </center>
@@ -124,29 +124,19 @@ $barang = new C_barang();
                         <!-- <h3>Informasi Lainnya</h3> -->
                         <table>
                             <tr>
-                                <th>Tanggal rilis: 9 Juli 2010</th>
+                                <th>Tanggal dibuat: 1 Desember 2023</th>
                                 <!-- <td>GURU</td> -->
                             </tr>
+                            
+                            
                             <tr>
-                                <th>Genre: Animation, Comedy, Family
-</th>
-                                <!-- <td>LAKI-LAKI</td> -->
-                            </tr>
-                            <tr>
-                                <th>Durasi:
-95 menit
-</th>
-                                <!-- <td>27</td> -->
-                            </tr>
-                            <tr>
-                                <th>Sutradara:
-Pierre Coffin, Chris Renaud
+                                <th>Developer:
+Anisa Rizqy Rinjany, Fasya Syabila, Yasir Mubarok, Muhammad Andri Purnama
 </th>
                                 <!-- <td>+62</td> -->
                             </tr>
                             <tr>
-                                <th>Studio:
-Universal Pictures, Illumination Entertainment
+                                <th>Kelas: XII RPL 3
 </th>
                                 <!-- <td>+62</td> -->
                             </tr>
